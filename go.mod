@@ -1,4 +1,5 @@
-module your-module-name
+module module github.com/MrManos/adv_sci_engr_hw
+
 
 go 1.23.2
 
