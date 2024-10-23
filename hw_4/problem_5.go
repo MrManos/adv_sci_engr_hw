@@ -12,7 +12,7 @@ func f(x float64) float64 {
 
 // function f'(x) = 3x^2 - 3
 func f_prime(x float64) float64 {
-	return math.Pow(x, 2) - 3
+	return 3*math.Pow(x, 2) - 3
 }
 
 func newtonsMethod(x0 float64, iterations int) float64 {

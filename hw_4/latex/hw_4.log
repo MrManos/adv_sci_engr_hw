@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.9.9)  21 OCT 2024 15:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.9.9)  23 OCT 2024 14:46
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -855,11 +855,11 @@ return to the right one by typing `I}' or `I$' or `I\par'.
 
 
 [8]
-<images/x_2.png, id=49, 269.20575pt x 55.407pt>
-File: images/x_2.png Graphic file (type png)
-<use images/x_2.png>
-Package pdftex.def Info: images/x_2.png  used on input line 596.
-(pdftex.def)             Requested size: 469.75502pt x 96.68889pt.
+<images/prob_5.jpg, id=49, 265.59225pt x 52.39575pt>
+File: images/prob_5.jpg Graphic file (type jpg)
+<use images/prob_5.jpg>
+Package pdftex.def Info: images/prob_5.jpg  used on input line 596.
+(pdftex.def)             Requested size: 469.75502pt x 92.68289pt.
 
 
 [9]
@@ -869,8 +869,8 @@ Overfull \hbox (30.38081pt too wide) in paragraph at lines 624--624
 
 
 
-[10 <./images/x_2.png>]
-<images/x_3.png, id=57, 482.40225pt x 39.14626pt>
+[10 <./images/prob_5.jpg>]
+<images/x_3.png, id=56, 482.40225pt x 39.14626pt>
 File: images/x_3.png Graphic file (type png)
 <use images/x_3.png>
 Package pdftex.def Info: images/x_3.png  used on input line 665.
@@ -889,16 +889,16 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
  ) 
 Here is how much of TeX's memory you used:
  27106 strings out of 473899
- 696261 string characters out of 5726501
+ 696282 string characters out of 5726501
  1945960 words of memory out of 5000000
  49545 multiletter control sequences out of 15000+600000
  575313 words of font info for 101 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,17n,93p,784b,2217s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/jacob/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/jacob/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/jacob/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Users/jacob/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/jacob/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/jacob/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/jacob/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/jacob/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/jacob/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/jacob/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/jacob/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/jacob/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/jacob/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/jacob/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/jacob/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on hw_4.pdf (11 pages, 266335 bytes).
+Output written on hw_4.pdf (11 pages, 278912 bytes).
 PDF statistics:
- 124 PDF objects out of 1000 (max. 8388607)
+ 123 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  33 words of extra memory for PDF output out of 10000 (max. 10000000)
 
