@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1729712767.24607 "c:/Users/jacob/Documents/school/Adv_Sci_Engr/hw/hw_4/latex/hw_4.tex" "hw_4.pdf" "hw_4" 1729712769.56621 2
-  "C:/Users/jacob/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1727978449 82507 a9eef8696c92627b87e9975edea03b2a ""
+["pdflatex"] 1730135931.51506 "c:/Users/jacob/Documents/school/Adv_Sci_Engr/hw/hw_4/latex/hw_4_Document_solution.tex" "hw_4_Document_solution.pdf" "hw_4_Document_solution" 1730135934.3568 2
+  "C:/Users/jacob/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1729875075 82507 a9eef8696c92627b87e9975edea03b2a ""
   "C:/Users/jacob/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1725912182 24265332 4ae86048fbdaf255eee326c6d15ece94 ""
   "C:/Users/jacob/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmbsy6.tfm" 1233951848 1124 14ccf5552bc7f77ca02a8a402bea8bfb ""
   "C:/Users/jacob/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmbsy7.tfm" 1233951848 1120 7f9f170e8aa57527ad6c49feafd45d54 ""
@@ -49,7 +49,6 @@
   "C:/Users/jacob/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1247596667 35752 024fb6c41858982481f6968b5fc26508 ""
   "C:/Users/jacob/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1247596667 32722 d7379af29a190c3f453aba36302ff5a9 ""
   "C:/Users/jacob/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb" 1247596666 32362 bc3f3eec7ab7d65fe700963d4017d32c ""
-  "C:/Users/jacob/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb" 1247596667 32734 69e00a6b65cedb993666e42eedb3d48f ""
   "C:/Users/jacob/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1247596667 32726 39f0f9e62e84beb801509898a605dbd5 ""
   "C:/Users/jacob/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1247596667 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "C:/Users/jacob/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb" 1247596667 32626 5abc8bb2f28aa647d4c70f8ea38cc0d3 ""
@@ -203,15 +202,15 @@
   "C:/Users/jacob/AppData/Local/Programs/MiKTeX/tex/latex/wasysym/wasysym.sty" 1579693002 11252 7fbfbe7bbcbe1f73acbe32ae2f10c666 ""
   "C:/Users/jacob/AppData/Local/Programs/MiKTeX/tex/latex/wrapfig/wrapfig.sty" 1044403200 26220 3701aebf80ccdef248c0c20dd062fea9 ""
   "C:/Users/jacob/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1700127522 55487 80a65caedd3722f4c20a14a69e785d8f ""
-  "c:/Users/jacob/Documents/school/Adv_Sci_Engr/hw/hw_4/latex/hw_4.tex" 1729712765 16112 7dbc8c418411932bb54474eb89b5efab ""
-  "hw_4.aux" 1729712769 1070 3ead6931ffdea245eb3d60259cfc18bd "pdflatex"
-  "hw_4.tex" 1729712765 16112 7dbc8c418411932bb54474eb89b5efab ""
-  "images/prob2.jpg" 1729541044 36109 c1a9ede3f901214ffdff1a516a8727d1 ""
+  "c:/Users/jacob/Documents/school/Adv_Sci_Engr/hw/hw_4/latex/hw_4_Document_solution.tex" 1730135894 16038 27d8344d07e0dbd1f2de49ae48b41615 ""
+  "hw_4_Document_solution.aux" 1730135933 1070 d5ce0ec3bf6836fd588ad1261fcd457d "pdflatex"
+  "hw_4_Document_solution.tex" 1730135894 16038 27d8344d07e0dbd1f2de49ae48b41615 ""
+  "images/prob2.jpg" 1730135531 20395 fd4154bc16936b3bc7b28a7dcfab8227 ""
   "images/prob_5.jpg" 1729712644 15684 a96149f08b79d06defdcae7f4a2e3eeb ""
   "images/x_1.png" 1729288464 7729 1ea67d16be75768d0080b53002c6dc14 ""
   "images/x_3.png" 1729288847 9015 ee247cfabc8e3aff18675a70ee546cb2 ""
   (generated)
-  "hw_4.aux"
-  "hw_4.log"
-  "hw_4.pdf"
+  "hw_4_Document_solution.aux"
+  "hw_4_Document_solution.log"
+  "hw_4_Document_solution.pdf"
   (rewritten before read)

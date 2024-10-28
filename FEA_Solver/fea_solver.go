@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-
 	"gonum.org/v1/gonum/mat"
 )
 
@@ -24,7 +23,15 @@ func svd_calculator(A *mat.Dense) {
 	var eig mat.Eigen
 
 	// Computes both the eigenvectors and eigenvalues
-	eig.Factorize(&A_T_A)
+	eig.Factorize( &A_T_A, mat.EigenBoth)
+
+	if (eig == nil) {
+		fmt.Println("Your matrix is most likely non-invertable")
+		panic("Matrix is invertable")
+	}
+
+
+
 
 }
 

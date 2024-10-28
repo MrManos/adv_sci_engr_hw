@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.9.9)  23 OCT 2024 14:46
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.9.9)  28 OCT 2024 12:18
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**c:/Users/jacob/Documents/school/Adv_Sci_Engr/hw/hw_4/latex/hw_4.tex
-(c:/Users/jacob/Documents/school/Adv_Sci_Engr/hw/hw_4/latex/hw_4.tex
+**c:/Users/jacob/Documents/school/Adv_Sci_Engr/hw/hw_4/latex/hw_4_Document_solution.tex
+(c:/Users/jacob/Documents/school/Adv_Sci_Engr/hw/hw_4/latex/hw_4_Document_solution.tex
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-08-16>
 (C:\Users\jacob\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
@@ -482,8 +482,8 @@ Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count325
 \l__pdf_internal_box=\box76
-) (hw_4.aux)
-\openout1 = `hw_4.aux'.
+) (hw_4_Document_solution.aux)
+\openout1 = `hw_4_Document_solution.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 27.
 LaTeX Font Info:    ... okay on input line 27.
@@ -538,33 +538,57 @@ File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
 {C:/Users/jacob/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
 
 [2]
-<images/prob2.jpg, id=24, 437.83575pt x 470.9595pt>
+<images/prob2.jpg, id=24, 259.56975pt x 449.2785pt>
 File: images/prob2.jpg Graphic file (type jpg)
 <use images/prob2.jpg>
 Package pdftex.def Info: images/prob2.jpg  used on input line 266.
-(pdftex.def)             Requested size: 469.75502pt x 505.31581pt.
+(pdftex.def)             Requested size: 427.48737pt x 361.73355pt.
 
 
 [3]
-c:/Users/jacob/Documents/school/Adv_Sci_Engr/hw/hw_4/latex/hw_4.tex:280: You can't use `macro parameter character #' in vertical mode.
-l.280 #
+c:/Users/jacob/Documents/school/Adv_Sci_Engr/hw/hw_4/latex/hw_4_Document_solution.tex:281: You can't use `macro parameter character #' in vertical mode.
+l.281 #
        ## Step 1: Centered Difference Approximation
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
 If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
-c:/Users/jacob/Documents/school/Adv_Sci_Engr/hw/hw_4/latex/hw_4.tex:280: You can't use `macro parameter character #' in vertical mode.
-l.280 ##
+c:/Users/jacob/Documents/school/Adv_Sci_Engr/hw/hw_4/latex/hw_4_Document_solution.tex:281: You can't use `macro parameter character #' in vertical mode.
+l.281 ##
         # Step 1: Centered Difference Approximation
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
 If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
-c:/Users/jacob/Documents/school/Adv_Sci_Engr/hw/hw_4/latex/hw_4.tex:280: You can't use `macro parameter character #' in vertical mode.
-l.280 ###
+c:/Users/jacob/Documents/school/Adv_Sci_Engr/hw/hw_4/latex/hw_4_Document_solution.tex:281: You can't use `macro parameter character #' in vertical mode.
+l.281 ###
           Step 1: Centered Difference Approximation
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+c:/Users/jacob/Documents/school/Adv_Sci_Engr/hw/hw_4/latex/hw_4_Document_solution.tex:287: You can't use `macro parameter character #' in vertical mode.
+l.287 #
+       ## Step 2: Backward Euler Method
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+c:/Users/jacob/Documents/school/Adv_Sci_Engr/hw/hw_4/latex/hw_4_Document_solution.tex:287: You can't use `macro parameter character #' in vertical mode.
+l.287 ##
+        # Step 2: Backward Euler Method
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+c:/Users/jacob/Documents/school/Adv_Sci_Engr/hw/hw_4/latex/hw_4_Document_solution.tex:287: You can't use `macro parameter character #' in vertical mode.
+l.287 ###
+          Step 2: Backward Euler Method
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
 If you're in the wrong mode, you might be able to
@@ -573,120 +597,96 @@ return to the right one by typing `I}' or `I$' or `I\par'.
 
 
 [4 <./images/prob2.jpg>]
-c:/Users/jacob/Documents/school/Adv_Sci_Engr/hw/hw_4/latex/hw_4.tex:286: You can't use `macro parameter character #' in vertical mode.
-l.286 #
-       ## Step 2: Backward Euler Method
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-c:/Users/jacob/Documents/school/Adv_Sci_Engr/hw/hw_4/latex/hw_4.tex:286: You can't use `macro parameter character #' in vertical mode.
-l.286 ##
-        # Step 2: Backward Euler Method
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-c:/Users/jacob/Documents/school/Adv_Sci_Engr/hw/hw_4/latex/hw_4.tex:286: You can't use `macro parameter character #' in vertical mode.
-l.286 ###
-          Step 2: Backward Euler Method
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-c:/Users/jacob/Documents/school/Adv_Sci_Engr/hw/hw_4/latex/hw_4.tex:296: You can't use `macro parameter character #' in vertical mode.
-l.296 #
+c:/Users/jacob/Documents/school/Adv_Sci_Engr/hw/hw_4/latex/hw_4_Document_solution.tex:297: You can't use `macro parameter character #' in vertical mode.
+l.297 #
        ## Step 3: Substituting \( u = G e^{ikx} \)
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
 If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
-c:/Users/jacob/Documents/school/Adv_Sci_Engr/hw/hw_4/latex/hw_4.tex:296: You can't use `macro parameter character #' in vertical mode.
-l.296 ##
+c:/Users/jacob/Documents/school/Adv_Sci_Engr/hw/hw_4/latex/hw_4_Document_solution.tex:297: You can't use `macro parameter character #' in vertical mode.
+l.297 ##
         # Step 3: Substituting \( u = G e^{ikx} \)
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
 If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
-c:/Users/jacob/Documents/school/Adv_Sci_Engr/hw/hw_4/latex/hw_4.tex:296: You can't use `macro parameter character #' in vertical mode.
-l.296 ###
+c:/Users/jacob/Documents/school/Adv_Sci_Engr/hw/hw_4/latex/hw_4_Document_solution.tex:297: You can't use `macro parameter character #' in vertical mode.
+l.297 ###
           Step 3: Substituting \( u = G e^{ikx} \)
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
 If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
-c:/Users/jacob/Documents/school/Adv_Sci_Engr/hw/hw_4/latex/hw_4.tex:310: You can't use `macro parameter character #' in vertical mode.
-l.310 #
+c:/Users/jacob/Documents/school/Adv_Sci_Engr/hw/hw_4/latex/hw_4_Document_solution.tex:311: You can't use `macro parameter character #' in vertical mode.
+l.311 #
        ## Step 4: Solving for \( G \)
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
 If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
-c:/Users/jacob/Documents/school/Adv_Sci_Engr/hw/hw_4/latex/hw_4.tex:310: You can't use `macro parameter character #' in vertical mode.
-l.310 ##
+c:/Users/jacob/Documents/school/Adv_Sci_Engr/hw/hw_4/latex/hw_4_Document_solution.tex:311: You can't use `macro parameter character #' in vertical mode.
+l.311 ##
         # Step 4: Solving for \( G \)
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
 If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
-c:/Users/jacob/Documents/school/Adv_Sci_Engr/hw/hw_4/latex/hw_4.tex:310: You can't use `macro parameter character #' in vertical mode.
-l.310 ###
+c:/Users/jacob/Documents/school/Adv_Sci_Engr/hw/hw_4/latex/hw_4_Document_solution.tex:311: You can't use `macro parameter character #' in vertical mode.
+l.311 ###
           Step 4: Solving for \( G \)
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
 If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
-c:/Users/jacob/Documents/school/Adv_Sci_Engr/hw/hw_4/latex/hw_4.tex:325: You can't use `macro parameter character #' in vertical mode.
-l.325 #
+c:/Users/jacob/Documents/school/Adv_Sci_Engr/hw/hw_4/latex/hw_4_Document_solution.tex:326: You can't use `macro parameter character #' in vertical mode.
+l.326 #
        ## 1. Find the first and second derivatives of \( f(x) \)
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
 If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
-c:/Users/jacob/Documents/school/Adv_Sci_Engr/hw/hw_4/latex/hw_4.tex:325: You can't use `macro parameter character #' in vertical mode.
-l.325 ##
+c:/Users/jacob/Documents/school/Adv_Sci_Engr/hw/hw_4/latex/hw_4_Document_solution.tex:326: You can't use `macro parameter character #' in vertical mode.
+l.326 ##
         # 1. Find the first and second derivatives of \( f(x) \)
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
 If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
-c:/Users/jacob/Documents/school/Adv_Sci_Engr/hw/hw_4/latex/hw_4.tex:325: You can't use `macro parameter character #' in vertical mode.
-l.325 ###
+c:/Users/jacob/Documents/school/Adv_Sci_Engr/hw/hw_4/latex/hw_4_Document_solution.tex:326: You can't use `macro parameter character #' in vertical mode.
+l.326 ###
           1. Find the first and second derivatives of \( f(x) \)
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
 If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
-c:/Users/jacob/Documents/school/Adv_Sci_Engr/hw/hw_4/latex/hw_4.tex:342: You can't use `macro parameter character #' in vertical mode.
-l.342 #
+c:/Users/jacob/Documents/school/Adv_Sci_Engr/hw/hw_4/latex/hw_4_Document_solution.tex:343: You can't use `macro parameter character #' in vertical mode.
+l.343 #
        ## 2. Find the y-intercept and determine any maxima or minima
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
 If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
-c:/Users/jacob/Documents/school/Adv_Sci_Engr/hw/hw_4/latex/hw_4.tex:342: You can't use `macro parameter character #' in vertical mode.
-l.342 ##
+c:/Users/jacob/Documents/school/Adv_Sci_Engr/hw/hw_4/latex/hw_4_Document_solution.tex:343: You can't use `macro parameter character #' in vertical mode.
+l.343 ##
         # 2. Find the y-intercept and determine any maxima or minima
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
 If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
-c:/Users/jacob/Documents/school/Adv_Sci_Engr/hw/hw_4/latex/hw_4.tex:342: You can't use `macro parameter character #' in vertical mode.
-l.342 ###
+c:/Users/jacob/Documents/school/Adv_Sci_Engr/hw/hw_4/latex/hw_4_Document_solution.tex:343: You can't use `macro parameter character #' in vertical mode.
+l.343 ###
           2. Find the y-intercept and determine any maxima or minima
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
@@ -696,48 +696,48 @@ return to the right one by typing `I}' or `I$' or `I\par'.
 
 
 [5]
-c:/Users/jacob/Documents/school/Adv_Sci_Engr/hw/hw_4/latex/hw_4.tex:371: You can't use `macro parameter character #' in vertical mode.
-l.371 #
+c:/Users/jacob/Documents/school/Adv_Sci_Engr/hw/hw_4/latex/hw_4_Document_solution.tex:372: You can't use `macro parameter character #' in vertical mode.
+l.372 #
        ## 3. Sketch the Graph and Determine Symmetry
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
 If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
-c:/Users/jacob/Documents/school/Adv_Sci_Engr/hw/hw_4/latex/hw_4.tex:371: You can't use `macro parameter character #' in vertical mode.
-l.371 ##
+c:/Users/jacob/Documents/school/Adv_Sci_Engr/hw/hw_4/latex/hw_4_Document_solution.tex:372: You can't use `macro parameter character #' in vertical mode.
+l.372 ##
         # 3. Sketch the Graph and Determine Symmetry
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
 If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
-c:/Users/jacob/Documents/school/Adv_Sci_Engr/hw/hw_4/latex/hw_4.tex:371: You can't use `macro parameter character #' in vertical mode.
-l.371 ###
+c:/Users/jacob/Documents/school/Adv_Sci_Engr/hw/hw_4/latex/hw_4_Document_solution.tex:372: You can't use `macro parameter character #' in vertical mode.
+l.372 ###
           3. Sketch the Graph and Determine Symmetry
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
 If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
-c:/Users/jacob/Documents/school/Adv_Sci_Engr/hw/hw_4/latex/hw_4.tex:411: You can't use `macro parameter character #' in vertical mode.
-l.411 #
+c:/Users/jacob/Documents/school/Adv_Sci_Engr/hw/hw_4/latex/hw_4_Document_solution.tex:412: You can't use `macro parameter character #' in vertical mode.
+l.412 #
        ## 4. Use Newton's Method to Approximate the x-intercept near \( x = ...
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
 If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
-c:/Users/jacob/Documents/school/Adv_Sci_Engr/hw/hw_4/latex/hw_4.tex:411: You can't use `macro parameter character #' in vertical mode.
-l.411 ##
+c:/Users/jacob/Documents/school/Adv_Sci_Engr/hw/hw_4/latex/hw_4_Document_solution.tex:412: You can't use `macro parameter character #' in vertical mode.
+l.412 ##
         # 4. Use Newton's Method to Approximate the x-intercept near \( x = ...
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
 If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
-c:/Users/jacob/Documents/school/Adv_Sci_Engr/hw/hw_4/latex/hw_4.tex:411: You can't use `macro parameter character #' in vertical mode.
-l.411 ###
+c:/Users/jacob/Documents/school/Adv_Sci_Engr/hw/hw_4/latex/hw_4_Document_solution.tex:412: You can't use `macro parameter character #' in vertical mode.
+l.412 ###
           4. Use Newton's Method to Approximate the x-intercept near \( x = ...
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
@@ -750,27 +750,27 @@ return to the right one by typing `I}' or `I$' or `I\par'.
 <images/x_1.png, id=38, 260.172pt x 56.00925pt>
 File: images/x_1.png Graphic file (type png)
 <use images/x_1.png>
-Package pdftex.def Info: images/x_1.png  used on input line 460.
+Package pdftex.def Info: images/x_1.png  used on input line 461.
 (pdftex.def)             Requested size: 469.75502pt x 101.1336pt.
 
-c:/Users/jacob/Documents/school/Adv_Sci_Engr/hw/hw_4/latex/hw_4.tex:467: You can't use `macro parameter character #' in vertical mode.
-l.467 #
+c:/Users/jacob/Documents/school/Adv_Sci_Engr/hw/hw_4/latex/hw_4_Document_solution.tex:468: You can't use `macro parameter character #' in vertical mode.
+l.468 #
        ## 1. Find all extrema and points of inflection
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
 If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
-c:/Users/jacob/Documents/school/Adv_Sci_Engr/hw/hw_4/latex/hw_4.tex:467: You can't use `macro parameter character #' in vertical mode.
-l.467 ##
+c:/Users/jacob/Documents/school/Adv_Sci_Engr/hw/hw_4/latex/hw_4_Document_solution.tex:468: You can't use `macro parameter character #' in vertical mode.
+l.468 ##
         # 1. Find all extrema and points of inflection
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
 If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
-c:/Users/jacob/Documents/school/Adv_Sci_Engr/hw/hw_4/latex/hw_4.tex:467: You can't use `macro parameter character #' in vertical mode.
-l.467 ###
+c:/Users/jacob/Documents/school/Adv_Sci_Engr/hw/hw_4/latex/hw_4_Document_solution.tex:468: You can't use `macro parameter character #' in vertical mode.
+l.468 ###
           1. Find all extrema and points of inflection
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
@@ -780,72 +780,72 @@ return to the right one by typing `I}' or `I$' or `I\par'.
 
 
 [7 <./images/x_1.png>]
-c:/Users/jacob/Documents/school/Adv_Sci_Engr/hw/hw_4/latex/hw_4.tex:502: You can't use `macro parameter character #' in vertical mode.
-l.502 #
+c:/Users/jacob/Documents/school/Adv_Sci_Engr/hw/hw_4/latex/hw_4_Document_solution.tex:503: You can't use `macro parameter character #' in vertical mode.
+l.503 #
        ## 2. Is the function odd, even, or neither?
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
 If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
-c:/Users/jacob/Documents/school/Adv_Sci_Engr/hw/hw_4/latex/hw_4.tex:502: You can't use `macro parameter character #' in vertical mode.
-l.502 ##
+c:/Users/jacob/Documents/school/Adv_Sci_Engr/hw/hw_4/latex/hw_4_Document_solution.tex:503: You can't use `macro parameter character #' in vertical mode.
+l.503 ##
         # 2. Is the function odd, even, or neither?
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
 If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
-c:/Users/jacob/Documents/school/Adv_Sci_Engr/hw/hw_4/latex/hw_4.tex:502: You can't use `macro parameter character #' in vertical mode.
-l.502 ###
+c:/Users/jacob/Documents/school/Adv_Sci_Engr/hw/hw_4/latex/hw_4_Document_solution.tex:503: You can't use `macro parameter character #' in vertical mode.
+l.503 ###
           2. Is the function odd, even, or neither?
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
 If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
-c:/Users/jacob/Documents/school/Adv_Sci_Engr/hw/hw_4/latex/hw_4.tex:512: You can't use `macro parameter character #' in vertical mode.
-l.512 #
+c:/Users/jacob/Documents/school/Adv_Sci_Engr/hw/hw_4/latex/hw_4_Document_solution.tex:513: You can't use `macro parameter character #' in vertical mode.
+l.513 #
        ## 3. Sketch of the function \( f(x) = x^3 - 3x - 3 \)
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
 If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
-c:/Users/jacob/Documents/school/Adv_Sci_Engr/hw/hw_4/latex/hw_4.tex:512: You can't use `macro parameter character #' in vertical mode.
-l.512 ##
+c:/Users/jacob/Documents/school/Adv_Sci_Engr/hw/hw_4/latex/hw_4_Document_solution.tex:513: You can't use `macro parameter character #' in vertical mode.
+l.513 ##
         # 3. Sketch of the function \( f(x) = x^3 - 3x - 3 \)
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
 If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
-c:/Users/jacob/Documents/school/Adv_Sci_Engr/hw/hw_4/latex/hw_4.tex:512: You can't use `macro parameter character #' in vertical mode.
-l.512 ###
+c:/Users/jacob/Documents/school/Adv_Sci_Engr/hw/hw_4/latex/hw_4_Document_solution.tex:513: You can't use `macro parameter character #' in vertical mode.
+l.513 ###
           3. Sketch of the function \( f(x) = x^3 - 3x - 3 \)
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
 If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
-c:/Users/jacob/Documents/school/Adv_Sci_Engr/hw/hw_4/latex/hw_4.tex:543: You can't use `macro parameter character #' in vertical mode.
-l.543 #
+c:/Users/jacob/Documents/school/Adv_Sci_Engr/hw/hw_4/latex/hw_4_Document_solution.tex:544: You can't use `macro parameter character #' in vertical mode.
+l.544 #
        ## 4. Newton's Method for Approximating the \( x \)-Intercept
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
 If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
-c:/Users/jacob/Documents/school/Adv_Sci_Engr/hw/hw_4/latex/hw_4.tex:543: You can't use `macro parameter character #' in vertical mode.
-l.543 ##
+c:/Users/jacob/Documents/school/Adv_Sci_Engr/hw/hw_4/latex/hw_4_Document_solution.tex:544: You can't use `macro parameter character #' in vertical mode.
+l.544 ##
         # 4. Newton's Method for Approximating the \( x \)-Intercept
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
 If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
-c:/Users/jacob/Documents/school/Adv_Sci_Engr/hw/hw_4/latex/hw_4.tex:543: You can't use `macro parameter character #' in vertical mode.
-l.543 ###
+c:/Users/jacob/Documents/school/Adv_Sci_Engr/hw/hw_4/latex/hw_4_Document_solution.tex:544: You can't use `macro parameter character #' in vertical mode.
+l.544 ###
           4. Newton's Method for Approximating the \( x \)-Intercept
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
@@ -855,29 +855,29 @@ return to the right one by typing `I}' or `I$' or `I\par'.
 
 
 [8]
-<images/prob_5.jpg, id=49, 265.59225pt x 52.39575pt>
+<images/prob_5.jpg, id=48, 265.59225pt x 52.39575pt>
 File: images/prob_5.jpg Graphic file (type jpg)
 <use images/prob_5.jpg>
-Package pdftex.def Info: images/prob_5.jpg  used on input line 596.
+Package pdftex.def Info: images/prob_5.jpg  used on input line 597.
 (pdftex.def)             Requested size: 469.75502pt x 92.68289pt.
 
 
 [9]
-Overfull \hbox (30.38081pt too wide) in paragraph at lines 624--624
+Overfull \hbox (30.38081pt too wide) in paragraph at lines 625--625
 [] \OT1/cmtt/m/n/10.95 var tolerance float64 = 0.000001 // Tolerance to check how close the result is to zero[] 
  []
 
 
 
 [10 <./images/prob_5.jpg>]
-<images/x_3.png, id=56, 482.40225pt x 39.14626pt>
+<images/x_3.png, id=55, 482.40225pt x 39.14626pt>
 File: images/x_3.png Graphic file (type png)
 <use images/x_3.png>
-Package pdftex.def Info: images/x_3.png  used on input line 665.
+Package pdftex.def Info: images/x_3.png  used on input line 666.
 (pdftex.def)             Requested size: 469.75502pt x 38.12173pt.
 
 
-[11 <./images/x_3.png>] (hw_4.aux)
+[11 <./images/x_3.png>] (hw_4_Document_solution.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-08-16>
@@ -889,16 +889,16 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
  ) 
 Here is how much of TeX's memory you used:
  27106 strings out of 473899
- 696282 string characters out of 5726501
+ 696516 string characters out of 5726501
  1945960 words of memory out of 5000000
  49545 multiletter control sequences out of 15000+600000
  575313 words of font info for 101 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,17n,93p,784b,2217s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/jacob/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/jacob/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/jacob/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Users/jacob/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/jacob/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/jacob/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/jacob/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/jacob/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/jacob/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/jacob/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/jacob/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/jacob/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/jacob/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/jacob/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/jacob/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on hw_4.pdf (11 pages, 278912 bytes).
+ 84i,17n,93p,802b,2217s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/jacob/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/jacob/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/jacob/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Users/jacob/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/jacob/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/jacob/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/jacob/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/jacob/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/jacob/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/jacob/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/jacob/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/jacob/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/jacob/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/jacob/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on hw_4_Document_solution.pdf (11 pages, 254799 bytes).
 PDF statistics:
- 123 PDF objects out of 1000 (max. 8388607)
+ 118 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  33 words of extra memory for PDF output out of 10000 (max. 10000000)
 

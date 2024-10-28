@@ -1,7 +1,7 @@
 PWD c:\Users\jacob\Documents\school\Adv_Sci_Engr\hw\hw_4\latex
 INPUT C:\Users\jacob\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
-INPUT c:\Users\jacob\Documents\school\Adv_Sci_Engr\hw\hw_4\latex\hw_4.tex
-OUTPUT hw_4.log
+INPUT c:\Users\jacob\Documents\school\Adv_Sci_Engr\hw\hw_4\latex\hw_4_Document_solution.tex
+OUTPUT hw_4_Document_solution.log
 INPUT C:\Users\jacob\AppData\Local\Programs\MiKTeX\tex\latex\base\article.cls
 INPUT C:\Users\jacob\AppData\Local\Programs\MiKTeX\tex\latex\base\article.cls
 INPUT C:\Users\jacob\AppData\Local\Programs\MiKTeX\tex\latex\base\size11.clo
@@ -238,10 +238,10 @@ INPUT C:\Users\jacob\AppData\Local\Programs\MiKTeX\tex\latex\etoolbox\etoolbox.s
 INPUT C:\Users\jacob\AppData\Local\Programs\MiKTeX\tex\latex\etoolbox\etoolbox.sty
 INPUT C:\Users\jacob\AppData\Local\Programs\MiKTeX\tex\latex\l3backend\l3backend-pdftex.def
 INPUT C:\Users\jacob\AppData\Local\Programs\MiKTeX\tex\latex\l3backend\l3backend-pdftex.def
-INPUT .\hw_4.aux
-INPUT .\hw_4.aux
-INPUT hw_4.aux
-OUTPUT hw_4.aux
+INPUT .\hw_4_Document_solution.aux
+INPUT .\hw_4_Document_solution.aux
+INPUT hw_4_Document_solution.aux
+OUTPUT hw_4_Document_solution.aux
 INPUT C:\Users\jacob\AppData\Local\Programs\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
 INPUT C:\Users\jacob\AppData\Local\Programs\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
 INPUT C:\Users\jacob\AppData\Local\Programs\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
@@ -322,7 +322,7 @@ INPUT C:\Users\jacob\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx10.tf
 INPUT C:\Users\jacob\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmmib10.tfm
 INPUT C:\Users\jacob\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbsy10.tfm
 INPUT C:\Users\jacob\AppData\Local\Programs\MiKTeX\fonts\tfm\public\wasy\wasy10.tfm
-OUTPUT hw_4.pdf
+OUTPUT hw_4_Document_solution.pdf
 INPUT C:\Users\jacob\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
 INPUT .\images\prob2.jpg
 INPUT .\images\prob2.jpg
@@ -353,7 +353,7 @@ INPUT .\images\x_3.png
 INPUT .\images\x_3.png
 INPUT .\images\x_3.png
 INPUT .\images\x_3.png
-INPUT hw_4.aux
+INPUT hw_4_Document_solution.aux
 INPUT C:\Users\jacob\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx10.pfb
 INPUT C:\Users\jacob\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx10.pfb
 INPUT C:\Users\jacob\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx12.pfb
@@ -374,8 +374,6 @@ INPUT C:\Users\jacob\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\c
 INPUT C:\Users\jacob\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr12.pfb
 INPUT C:\Users\jacob\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr17.pfb
 INPUT C:\Users\jacob\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr17.pfb
-INPUT C:\Users\jacob\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr6.pfb
-INPUT C:\Users\jacob\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr6.pfb
 INPUT C:\Users\jacob\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr8.pfb
 INPUT C:\Users\jacob\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr8.pfb
 INPUT C:\Users\jacob\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy10.pfb
