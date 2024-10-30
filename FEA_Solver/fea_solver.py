@@ -49,8 +49,8 @@ def svd_calc(A):
         raise ValueError("Matrix is non-invertible due to zero singular values.")
 
     # Condition number is the largest/smallest singular value
-    condition_number = max(singular_values) / min(singular_values)
-
+    # condition_number = max(singular_values) / min(singular_values)
+    condition_number = np.linalg.norm(A)*np.linalg.norm(np.linalg.inv(A))
     # S_inv
     S_inv = np.linalg.inv(S)
 
@@ -59,9 +59,21 @@ def svd_calc(A):
     
     return np.array(U), S, V, condition_number, A_inv
     
-    
+
+
+# def spring_mass(masses, springs, fixed_ends, free_ends):
+#     if (fixed_ends == 2):
+         
+        
+
+
+
+
+
+
+
 # Example 
-A = np.array([[1, 2], [3, 4]], dtype=float)
+A = np.array([[1.0, 2.0, 3.0], [0.0,1.0, 4.0], [5.0,6.0,0.0]])
 try:
     U, S, Vt, cond_num, A_inv = svd_calc(A)
     print("U matrix:\n", U)

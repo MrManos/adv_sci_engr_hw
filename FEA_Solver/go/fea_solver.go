@@ -2,10 +2,9 @@ package main
 
 import (
 	"fmt"
+	"gonum.org/v1/gonum/mat"
 	"log"
 	"math"
-
-	"gonum.org/v1/gonum/mat"
 )
 
 // Function to print a matrix in a readable format
