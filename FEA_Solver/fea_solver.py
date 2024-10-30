@@ -49,8 +49,8 @@ def svd_calc(A):
         raise ValueError("Matrix is non-invertible due to zero singular values.")
 
     # Condition number is the largest/smallest singular value
-    # condition_number = max(singular_values) / min(singular_values)
-    condition_number = np.linalg.norm(A)*np.linalg.norm(np.linalg.inv(A))
+    # ||A||*||A^-1|| can be written as max/min of the matrix values as shown in L8
+    condition_number = max(singular_values) / min(singular_values)
     # S_inv
     S_inv = np.linalg.inv(S)
 
@@ -61,9 +61,44 @@ def svd_calc(A):
     
 
 
-# def spring_mass(masses, springs, fixed_ends, free_ends):
-#     if (fixed_ends == 2):
-         
+def spring_mass(masses, springs, fixed_ends, free_ends, spring_constants):
+    # masses is a vector of the mass of the balls
+    num_masses = len(masses)
+    
+    
+    A = np.array.zeros(( num_masses, springs))
+    for i in np.linalg.ncol(A):
+        A[i,i] = 1
+        A(i+1,i) = -1
+        return A
+    # Creates the element vector
+    e = np.array([num_masses,1])
+    
+    # Creates the displacement matrix
+    u = np.array([springs,1])
+    
+    if (spring_constants != type array):
+        print(f"Your spring constant needs to be a diagonal matrix")
+    
+    # Creates the internal force equation
+    w = spring_constants @ e
+    
+    # Creates the stiffness matrix k
+    k = A.T @ spring_constants @ A
+    
+    _,S,V,condition_number,K_inv = svd_calc(k)
+    
+    # Creates the force matrix 
+    f = k @ u
+    
+    # Solves the equation u = k^-1*f and gets the displacement
+    u = K_inv @ f
+        
+        
+        
+        
+        
+        
         
 
 
