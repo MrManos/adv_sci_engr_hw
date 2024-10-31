@@ -85,10 +85,7 @@ def spring_mass(masses: np.array, springs: int, fixed_ends: int, spring_constant
                 A[i,i+1] = -1
 
     elif (fixed_ends == 0):
-        for i in range(springs):
-            A[i,i] = 1
-            if (i+1) < num_masses:
-                A[i,i+1] = -1
+        raise ValueError("This fails because we have we do not have a full rank, this amount of fixed ends has a non zero null space.")
     
     # Ensure that A, c, and the resulting stiffness matrix match in dimensions
     if A.shape[0] != c.shape[0]:
@@ -174,7 +171,7 @@ if __name__ == "__main__":
     masses = np.array([1.0, 2.0, 1.5])         # Masses in kg
     spring_constants = np.array([100, 150, 150, 100])  # Spring constants in N/m
     springs = 4
-    fixed_ends = 2  
+    fixed_ends = 0
 
     # Call the spring_mass function with the example parameters
     k, condition_number, V, S, f, u, eigen_values, e, w = spring_mass(masses, springs, fixed_ends, spring_constants)
