@@ -64,14 +64,14 @@ def spring_mass(masses: np.array, springs: int, fixed_ends: int, spring_constant
 
     # 2 fixed ends
     if (fixed_ends == 2):
-        for i in range(springs-1):
+        for i in range(springs):
             A[i,i] = 1
             A[i+1,i] = -1
 
     
     # 1 fixed end and free ends systems
     elif (fixed_ends == 1) | (fixed_ends == 0):
-        for i in range(springs-1):
+        for i in range(springs):
             A[i,i] = 1
             if (i+1) < num_masses:
                 A[i,i+1] = -1
