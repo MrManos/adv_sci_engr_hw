@@ -4,9 +4,9 @@ def svd_calc(A):
     
     # Create the square matrix for a left a right side 
     # Right Singular Vector
-    A_T_A = np.dot(A.T, A)
+    A_T_A = A.T @ A
     # Left Singular Vector
-    A_A_T = np.dot(A,A.T)
+    A_A_T = A @ A.T
     
     # Find the eigens and eigenvectors
     # Returns the V
@@ -14,25 +14,11 @@ def svd_calc(A):
     # Returns the U
     eigens_AAT, U = np.linalg.eig(A_A_T)
     
-    # Create a list of eigenvalues/vectors
-    Eigenvalues_list = eigens_ATA.tolist()
-    V_list = V.tolist()
+    # Sort eigenvalues and corresponding eigenvectors
+    idx = np.argsort(eigens_ATA)[::-1]  # Sort in descending order
+    Eigenvalues_list = eigens_ATA[idx].tolist()  # Sorted eigenvalues
+    V = V[:, idx]  # Sorted eigenvectors
 
-    # set up bubble sort
-    n = len(Eigenvalues_list)
-    for i in range(n):
-        # Find largest eigenvalue index
-        max_idx = i
-        for j in range(i + 1, n):
-            if Eigenvalues_list[j] > Eigenvalues_list[max_idx]:
-                max_idx = j
-    
-        # Swap the eigenvalues
-        Eigenvalues_list[i], Eigenvalues_list[max_idx] = Eigenvalues_list[max_idx], Eigenvalues_list[i]
-    
-        # Swap the corresponding eigenvectors
-        V[i], V[max_idx] = V[max_idx], V[i]
-    
     # Convert V back to an array and transpose
     V = np.array(V).T
 
@@ -51,8 +37,12 @@ def svd_calc(A):
     # Condition number is the largest/smallest singular value
     # ||A||*||A^-1|| can be written as max/min of the matrix values as shown in L8
     condition_number = max(singular_values) / min(singular_values)
+
     # S_inv
-    S_inv = np.linalg.inv(S)
+    S_inv = np.zeros_like(S)
+    for i in range(len(singular_values)):
+        if singular_values[i] != 0:
+            S_inv[i, i] = 1.0 / singular_values[i]
 
     # A^{-1} = V * S^{-1} * U^T
     A_inv = np.dot(np.dot(V, S_inv), U.T)
@@ -62,6 +52,7 @@ def svd_calc(A):
 
 
 def spring_mass(masses: np.array, springs: int, fixed_ends: int, spring_constants: np.array):
+    
     # masses is a vector of the mass of the balls
     num_masses = len(masses)
     
@@ -73,19 +64,19 @@ def spring_mass(masses: np.array, springs: int, fixed_ends: int, spring_constant
 
     # 2 fixed ends
     if (fixed_ends == 2):
-        for i in range(springs):
+        for i in range(springs-1):
             A[i,i] = 1
-            A(i+1,i) = -1
-            return A
+            A[i+1,i] = -1
+
     
     # 1 fixed end and free ends systems
-    if (fixed_ends == 1) | (fixed_ends == 0):
-        for i in range(springs):
+    elif (fixed_ends == 1) | (fixed_ends == 0):
+        for i in range(springs-1):
             A[i,i] = 1
             if (i+1) < num_masses:
                 A[i,i+1] = -1
-            return A
-        
+
+    
     # Creates the element vector
     e = np.array([num_masses,1])
     
@@ -113,36 +104,34 @@ def spring_mass(masses: np.array, springs: int, fixed_ends: int, spring_constant
     
     # Solves the equation u = k^-1*f and gets the displacement
     u = K_inv @ f
-        
-    return k, condition_number, V, S, f, u, eigen_values
-        
-        
-        
-        
-        
-
-
-
-
-
-
-
-# Example 
-A = np.array([[1.0, 2.0, 3.0], [0.0,1.0, 4.0], [5.0,6.0,0.0]])
-try:
-    U, S, Vt, cond_num, A_inv = svd_calc(A)
-    print("U matrix:\n", U)
-    print("S matrix (singular values):\n", S)
-    print("V^T matrix:\n", Vt)
-    print("Condition number:", cond_num)
-    print("Inverse matrix:\n", A_inv)
-except ValueError as e:
-    print(e)
     
-    
-print(f"This seperates my svd and the regular svd")
-[U,S,Vh] = np.linalg.svd(A)
-print("U matrix:\n", U)
-print("S matrix (singular values):\n" , S)
-print("V^T matrix:\n", Vh)
-    
+    # Calculate elongations and internal forces (stresses)
+    e = A @ u  # Elongations in each spring
+    w = c @ e  # Internal forces (stresses) in each spring
+        
+    return k, condition_number, V, S, f, u, eigen_values, e, w
+        
+        
+        
+        
+        
+
+
+# System parameters
+masses = np.array([1.0, 2.0, 1.5])          # Masses in kg
+spring_constants = np.array([100, 150,150,100])      # Spring constants in N/m
+springs = 4
+fixed_ends = 1                               # 1 fixed end, 1 free end
+
+# Call the function
+K, condition_number, V, S, f, u, eigen_values, e, w = spring_mass(masses, springs, fixed_ends, spring_constants)
+
+# Display results
+print("Stiffness matrix K:\n", K)
+print("Condition number of K:", condition_number)
+print("Singular values (S):\n", S)
+print("Force vector (f):\n", f)
+print("Displacement vector (u):\n", u)
+print("Elongation vector (e):\n", e)
+print("Internal force (stress) vector (w):\n", w)
+print("Eigenvalues of K:\n", eigen_values)
