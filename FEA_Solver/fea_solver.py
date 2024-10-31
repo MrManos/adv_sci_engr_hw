@@ -61,40 +61,60 @@ def svd_calc(A):
     
 
 
-def spring_mass(masses, springs, fixed_ends, free_ends, spring_constants):
+def spring_mass(masses: np.array, springs: int, fixed_ends: int, spring_constants: np.array):
     # masses is a vector of the mass of the balls
     num_masses = len(masses)
     
+    # The user inputs a vector of the spring constants
+    c = np.diag(spring_constants)
+
+    # Creates the difference matrix based on how many fixed ends there are
+    A = np.zeros(( springs, num_masses))
+
+    # 2 fixed ends
+    if (fixed_ends == 2):
+        for i in range(springs):
+            A[i,i] = 1
+            A(i+1,i) = -1
+            return A
     
-    A = np.array.zeros(( num_masses, springs))
-    for i in np.linalg.ncol(A):
-        A[i,i] = 1
-        A(i+1,i) = -1
-        return A
+    # 1 fixed end and free ends systems
+    if (fixed_ends == 1) | (fixed_ends == 0):
+        for i in range(springs):
+            A[i,i] = 1
+            if (i+1) < num_masses:
+                A[i,i+1] = -1
+            return A
+        
     # Creates the element vector
     e = np.array([num_masses,1])
     
     # Creates the displacement matrix
     u = np.array([springs,1])
     
-    if (spring_constants != type array):
+    # Changed this 
+    if (type(c) != np.array):
         print(f"Your spring constant needs to be a diagonal matrix")
     
     # Creates the internal force equation
-    w = spring_constants @ e
+    w = c @ e
     
     # Creates the stiffness matrix k
-    k = A.T @ spring_constants @ A
+    k = A.T @ c @ A
     
     _,S,V,condition_number,K_inv = svd_calc(k)
     
+    if (K_inv == None):
+        raise ValueError("The system matrix K could not be inversed")
+    # Eigen values are **2 the singular values
+    eigen_values = S **2
     # Creates the force matrix 
-    f = k @ u
+    f = masses * 9.81
     
     # Solves the equation u = k^-1*f and gets the displacement
     u = K_inv @ f
         
-        
+    return k, condition_number, V, S, f, u, eigen_values
         
         
         
