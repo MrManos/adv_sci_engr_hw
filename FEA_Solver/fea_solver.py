@@ -1,5 +1,40 @@
 import numpy as np
 
+def Spring_mass_with_user_inputs():
+    # Number of masses
+    num_masses = int(input("Enter the number of masses: "))
+    
+    # Masses in kg
+    masses = []
+    for i in range(num_masses):
+        mass = float(input(f"Enter mass {i + 1} (in kg): "))
+        masses.append(mass)
+    masses = np.array(masses)
+    
+    # Number of springs (should be one more than the number of masses)
+    springs = num_masses + 1
+    
+    # Spring constants in N/m
+    spring_constants = []
+    print(f"Enter the spring constants for each of the {springs} springs:")
+    for i in range(springs):
+        k = float(input(f"Spring constant {i + 1} (in N/m): "))
+        spring_constants.append(k)
+    spring_constants = np.array(spring_constants)
+    
+    # Fixed ends configuration
+    print("Enter the fixed ends configuration:")
+    print("0 - No fixed ends")
+    print("1 - One fixed end")
+    print("2 - Two fixed ends")
+    fixed_ends = int(input("Enter the number of fixed ends (0,1,2): "))
+    
+    k, condition_number, V, S_matrix, f, u, eigen_values, e, w = spring_mass(masses=masses, springs=springs, fixed_ends=fixed_ends, spring_constants=spring_constants)
+    
+    return k, condition_number, V, S_matrix, f, u, eigen_values, e, w
+
+
+
 def svd_calc(A):
     """
     Calculates the Singular Value Decomposition of matrix A
@@ -60,7 +95,46 @@ def svd_calc(A):
 
 
 def spring_mass(masses: np.array, springs: int, fixed_ends: int, spring_constants: np.array):
+    """
+    Calculates the stiffness matrix, condition number, displacements, elongations, and internal forces
+    for a spring-mass system given the masses, spring constants, and amount of fixed ends
     
+    Parameters:
+    ----------
+    masses (np.array) - A 1D numpy array of the masses attached to each point in the system (in kg).
+    
+    springs (int) - The number of springs in the system, which should be one more than the number of masses.
+    
+    fixed_ends (int) - Boundary conditions of the system
+    
+    spring_constants (np.array) - A 1D numpy array of the spring constants for each spring (in N/m).
+    
+    Returns:
+    -------
+    k (np.array) - The stiffness matrix of the system.
+    
+    condition_number (float) - The condition number of the stiffness matrix, indicating the stability of the system.
+    
+    V (np.array) - The right singular vectors matrix from the SVD of the stiffness matrix.
+    
+    S_matrix (np.array) - A diagonal matrix containing the singular values of the stiffness matrix.
+    
+    f (np.array) - The gravitational force vector on each mass in the system.
+    
+    u (np.array) - The displacement vector of each mass.
+    
+    eigen_values (np.array) - The eigenvalues of the stiffness matrix, representing the squared singular values.
+    
+    e (np.array) - The elongation in each spring, calculated as the difference in displacements between adjacent masses.
+    
+    w (np.array) -The internal forces or stresses in each spring, based on the elongations.
+   
+    Raises:
+    ------
+    ValueError
+        If `fixed_ends` is 0 (unsupported configuration), or if there is a dimension mismatch between matrices.
+    
+    """    
     # masses is a vector of the mass of the balls
     num_masses = len(masses)
     
@@ -130,6 +204,9 @@ def spring_mass(masses: np.array, springs: int, fixed_ends: int, spring_constant
         
 if __name__ == "__main__":
     
+    
+    
+    
     # Part 2 compare the results of my SVD vs the blackbox one
     
         # Test matrix
@@ -163,19 +240,36 @@ if __name__ == "__main__":
     print("V matrix:\n", V_np_T.T)
     print("Condition number:\n", cond_np)
     print("Inverse matrix:\n", A_inv_np)
+    
+    print("-----------------------------------------------------------------------")
 
     print("My results match well with the black box SVD function. You can tell because the condition numbers, eigenvalues, and U matrix (despite having the same numbers with different columns and signs) match. The reason the U matrices do not need to match exactly is due to the non-uniqueness that occurs in the U and V matrices. Non-uniqueness refers to the basis vectors that span the column and row spaces of A. A different choice of column or sign just changes the direction of the basis vectors and does not jeopardize the solution.")
+
+    print("-----------------------------------------------------------------------")
 
 
     # Define the system parameters
     masses = np.array([1.0, 2.0, 1.5])         # Masses in kg
     spring_constants = np.array([100, 150, 150, 100])  # Spring constants in N/m
     springs = 4
-    fixed_ends = 0
+    fixed_ends = 1
 
     # Call the spring_mass function with the example parameters
     k, condition_number, V, S, f, u, eigen_values, e, w = spring_mass(masses, springs, fixed_ends, spring_constants)
+    print("-----------------------------------------------------------------------")
 
+    # Display the results
+    print("Stiffness matrix K:\n", k)
+    print("Condition number of K:", condition_number)
+    print("Singular values (S):\n", S)
+    print("Force vector (f):\n", f)
+    print("Displacement vector (u):\n", u)
+    print("Elongation vector (e):\n", e)
+    print("Internal force (stress) vector (w):\n", w)
+    print("Eigenvalues of K:\n", eigen_values)
+    
+    k, condition_number, V, S_matrix, f, u, eigen_values, e, w = Spring_mass_with_user_inputs()
+    print("-----------------------------------------------------------------------")
     # Display the results
     print("Stiffness matrix K:\n", k)
     print("Condition number of K:", condition_number)
