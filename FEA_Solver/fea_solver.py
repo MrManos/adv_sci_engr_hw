@@ -90,10 +90,15 @@ def spring_mass(masses: np.array, springs: int, fixed_ends: int, spring_constant
             if (i+1) < num_masses:
                 A[i,i+1] = -1
     
+    # Ensure that A, c, and the resulting stiffness matrix match in dimensions
+    if A.shape[0] != c.shape[0]:
+        raise ValueError("Dimension mismatch: A and c should have compatible dimensions.")
+    
+    
     # Creates the stiffness matrix k
     k = A.T @ c @ A
     
-    _,S,V,condition_number,K_inv = svd_calc(k)
+    U, S_matrix, V, condition_number, K_inv, _ = svd_calc(k)
     
         # Creates the element vector
     e = np.array([num_masses,1])
@@ -105,13 +110,14 @@ def spring_mass(masses: np.array, springs: int, fixed_ends: int, spring_constant
     if (type(c) != np.array):
         print(f"Your spring constant needs to be a diagonal matrix")
     
-    # Creates the internal force equation
-    w = c @ e
     
-    if (K_inv == None):
-        raise ValueError("The system matrix K could not be inversed")
+     # Check if the condition number indicates an invertible matrix
+    if condition_number > 1e12:  # Threshold for singularity
+        raise ValueError("The system matrix K is ill-conditioned and close to singular.")
+
+    
     # Eigen values are **2 the singular values
-    eigen_values = S **2
+    eigen_values = S_matrix **2
     # Creates the force matrix 
     f = masses * 9.81
     
@@ -122,7 +128,7 @@ def spring_mass(masses: np.array, springs: int, fixed_ends: int, spring_constant
     e = A @ u  # Elongations in each spring
     w = c @ e  # Internal forces (stresses) in each spring
         
-    return k, condition_number, V, S, f, u, eigen_values, e, w
+    return k, condition_number, V, S_matrix, f, u, eigen_values, e, w
         
         
 if __name__ == "__main__":
@@ -161,24 +167,24 @@ if __name__ == "__main__":
     print("Condition number:\n", cond_np)
     print("Inverse matrix:\n", A_inv_np)
 
-print("My results match well with the black box SVD function. You can tell because the condition numbers, eigenvalues, and U matrix (despite having the same numbers with different columns and signs) match. The reason the U matrices do not need to match exactly is due to the non-uniqueness that occurs in the U and V matrices. Non-uniqueness refers to the basis vectors that span the column and row spaces of A. A different choice of column or sign just changes the direction of the basis vectors and does not jeopardize the solution.")
+    print("My results match well with the black box SVD function. You can tell because the condition numbers, eigenvalues, and U matrix (despite having the same numbers with different columns and signs) match. The reason the U matrices do not need to match exactly is due to the non-uniqueness that occurs in the U and V matrices. Non-uniqueness refers to the basis vectors that span the column and row spaces of A. A different choice of column or sign just changes the direction of the basis vectors and does not jeopardize the solution.")
 
 
-# # System parameters
-# masses = np.array([1.0, 2.0, 1.5])          # Masses in kg
-# spring_constants = np.array([100, 150,150,100])      # Spring constants in N/m
-# springs = 4
-# fixed_ends = 1                               # 1 fixed end, 1 free end
+    # Define the system parameters
+    masses = np.array([1.0, 2.0, 1.5])         # Masses in kg
+    spring_constants = np.array([100, 150, 150, 100])  # Spring constants in N/m
+    springs = 4
+    fixed_ends = 2  
 
-# # Call the function
-# K, condition_number, V, S, f, u, eigen_values, e, w = spring_mass(masses, springs, fixed_ends, spring_constants)
+    # Call the spring_mass function with the example parameters
+    k, condition_number, V, S, f, u, eigen_values, e, w = spring_mass(masses, springs, fixed_ends, spring_constants)
 
-# # Display results
-# print("Stiffness matrix K:\n", K)
-# print("Condition number of K:", condition_number)
-# print("Singular values (S):\n", S)
-# print("Force vector (f):\n", f)
-# print("Displacement vector (u):\n", u)
-# print("Elongation vector (e):\n", e)
-# print("Internal force (stress) vector (w):\n", w)
-# print("Eigenvalues of K:\n", eigen_values)
+    # Display the results
+    print("Stiffness matrix K:\n", k)
+    print("Condition number of K:", condition_number)
+    print("Singular values (S):\n", S)
+    print("Force vector (f):\n", f)
+    print("Displacement vector (u):\n", u)
+    print("Elongation vector (e):\n", e)
+    print("Internal force (stress) vector (w):\n", w)
+    print("Eigenvalues of K:\n", eigen_values)
