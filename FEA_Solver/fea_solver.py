@@ -1,38 +1,46 @@
 import numpy as np
 
 def svd_calc(A):
-    
+    """
+    Calculates the Singular Value Decomposition of matrix A
+
+    Inputs:
+    A (np.array m x n matrix) - matrix set for decomposition
+
+    returns: 
+    u (np.array): left singular value
+    v (np.array): right singular value
+    conditional number (float) 
+    A_inv (np.array) - Inverse of matrix A
+
+    """
     # Create the square matrix for a left a right side 
     # Right Singular Vector
     A_T_A = A.T @ A
     # Left Singular Vector
     A_A_T = A @ A.T
-    
     # Find the eigens and eigenvectors
     # Returns the V
     eigens_ATA, V = np.linalg.eig(A_T_A)
-    # Returns the U
     eigens_AAT, U = np.linalg.eig(A_A_T)
-    
-    # Sort eigenvalues and corresponding eigenvectors
-    idx = np.argsort(eigens_ATA)[::-1]  # Sort in descending order
-    Eigenvalues_list = eigens_ATA[idx].tolist()  # Sorted eigenvalues
-    V = V[:, idx]  # Sorted eigenvectors
 
-    # Convert V back to an array and transpose
+    # get the singular vaules
+    singular_values = np.sqrt(np.abs(eigens_ATA))
+
+    # Sort eigenvalues and corresponding eigenvectors
+    idx = np.argsort(singular_values)[::-1]  # Sort in descending order
+    singular_values = singular_values[idx] # Sorted eigenvalues
+    V = V[singular_values]  # Sorted eigenvectors
+
+    # Convert V back to SVD form
     V = np.array(V).T
 
-    # Remove any tiny negative values due to numerical precision
-    singular_values = [np.sqrt(abs(eigval)) for eigval in Eigenvalues_list]
-
-    # Form the singular value matrix S (m x n with singular values on the diagonal)
-    S = np.zeros_like(A, dtype=float)
-    for i in range(min(len(singular_values), S.shape[1])):
-        S[i, i] = singular_values[i]
+    # Singular value diagonal matrix
+    s = np.diag(singular_values)
 
     # Check if any singular values are 0, this means its non-invertible
     if any(s == 0 for s in singular_values):
-        raise ValueError("Matrix is non-invertible due to zero singular values.")
+        raise ValueError("Matrix is non-invertible due to a zero singular value.")
 
     # Condition number is the largest/smallest singular value
     # ||A||*||A^-1|| can be written as max/min of the matrix values as shown in L8
@@ -45,9 +53,9 @@ def svd_calc(A):
             S_inv[i, i] = 1.0 / singular_values[i]
 
     # A^{-1} = V * S^{-1} * U^T
-    A_inv = np.dot(np.dot(V, S_inv), U.T)
+    A_inv = V @ S_inv @ U.T
     
-    return np.array(U), S, V, condition_number, A_inv
+    return U, S, V, condition_number, A_inv
     
 
 
@@ -64,19 +72,25 @@ def spring_mass(masses: np.array, springs: int, fixed_ends: int, spring_constant
 
     # 2 fixed ends
     if (fixed_ends == 2):
-        for i in range(springs):
+        for i in range(num_masses):
             A[i,i] = 1
             A[i+1,i] = -1
 
     
     # 1 fixed end and free ends systems
-    elif (fixed_ends == 1) | (fixed_ends == 0):
+    elif (fixed_ends == 1):
+        for i in range(num_masses):
+            A[i,i] = 1
+            if (i+1) < num_masses:
+                A[i,i+1] = -1
+
+    elif (fixed_ends == 0):
         for i in range(springs):
             A[i,i] = 1
             if (i+1) < num_masses:
                 A[i,i+1] = -1
 
-    
+
     # Creates the element vector
     e = np.array([num_masses,1])
     
