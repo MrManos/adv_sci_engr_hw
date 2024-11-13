@@ -1,0 +1,298 @@
+\documentclass[11pt]{article}
+\usepackage{subfigure,wrapfig,graphicx,booktabs,fancyhdr,amsmath,amsfonts,appendix,tikz}
+\usepackage{bm,amssymb,amsthm,wasysym,color,fullpage,setspace,multirow,placeins}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{amsmath,amssymb}
+\usepackage{tcolorbox}
+
+% Custom math commands
+\newcommand{\vb}{\boldsymbol}
+\newcommand{\vbh}[1]{\hat{\boldsymbol{#1}}}
+\newcommand{\vbb}[1]{\bar{\boldsymbol{#1}}}
+\newcommand{\vbt}[1]{\tilde{\boldsymbol{#1}}}
+\newcommand{\vbs}[1]{{\boldsymbol{#1}}^*}
+\newcommand{\vbd}[1]{\dot{{\boldsymbol{#1}}}}
+\newcommand{\vbdd}[1]{\ddot{{\boldsymbol{#1}}}}
+\newcommand{\by}{\times}
+\newcommand{\tr}{{\rm tr}}
+\newcommand{\cpe}[1]{\left[{#1} \times\right]}
+\newcommand{\sfrac}[2]{\textstyle\frac{#1}{#2}}
+
+% Title and Author Information
+\title{Homework 6}
+\author{Jacob Hands \\ COE 352}
+\date{November 13, 2023}
+
+\begin{document}
+\maketitle
+
+\section*{Homework \#6}
+
+1) Compute the Jacobian matrix for the following:
+\begin{enumerate}
+    \item (15pts)
+    \[
+    \bm{F}(x, y) =
+    \begin{bmatrix}
+        x^2 + \sin(x) \\
+        x(y - 2) \\
+        y^2 - 3xy
+    \end{bmatrix}
+    \]
+
+    \item (15pts)
+    \[
+    \bm{G}(x, y, z) =
+    \begin{bmatrix}
+        x^2 - y^2 \\
+        3xyz - 5
+    \end{bmatrix}
+    \]
+\end{enumerate}
+
+\subsection*{Solution}
+The Jacobian matrix is defined as:
+\[
+J =
+\begin{bmatrix}
+    \frac{\partial f_1}{\partial x} & \frac{\partial f_1}{\partial y} & \cdots \\
+    \frac{\partial f_2}{\partial x} & \frac{\partial f_2}{\partial y} & \cdots \\
+    \frac{\partial f_3}{\partial x} & \frac{\partial f_3}{\partial y} & \cdots \\
+\end{bmatrix}
+\]
+
+\subsubsection*{1) For \(\bm{F}(x, y)\):}
+\[
+J_{\bm{F}}(x, y) =
+\begin{bmatrix}
+    2x + \cos(x) & 0 \\
+    y - 2 & x  \\
+    -3y & 2y - 3x 
+\end{bmatrix}
+\]
+
+\subsubsection*{2) For \(\bm{G}(x, y, z)\):}
+\[
+J_{\bm{G}}(x, y, z) =
+\begin{bmatrix}
+    2x & -2y & 0 \\
+    3yz & 3xz & 3xy
+\end{bmatrix}
+\]
+
+\section*{Problem 2: Jacobian of Polar Coordinates Transformation}
+
+\subsection*{Given:}
+\[
+x = r \cos \theta, \quad y = r \sin \theta
+\]
+
+The transformation can be expressed as:
+\[
+T(r, \theta) =
+\begin{cases}
+x = r \cos \theta \\
+y = r \sin \theta
+\end{cases}
+\]
+
+\subsection*{Jacobian Matrix:}
+The Jacobian matrix is defined as:
+\[
+\frac{\partial(x, y)}{\partial(r, \theta)} =
+\begin{bmatrix}
+\frac{\partial x}{\partial r} & \frac{\partial x}{\partial \theta} \\
+\frac{\partial y}{\partial r} & \frac{\partial y}{\partial \theta}
+\end{bmatrix}
+=
+\begin{bmatrix}
+\cos \theta & -r \sin \theta \\
+\sin \theta & r \cos \theta
+\end{bmatrix}
+\]
+
+\subsection*{Jacobian Determinant:}
+\[
+\text{det}\left( \frac{\partial(x, y)}{\partial(r, \theta)} \right) =
+\begin{vmatrix}
+\cos \theta & -r \sin \theta \\
+\sin \theta & r \cos \theta
+\end{vmatrix}
+= (\cos \theta)(r \cos \theta) - (-r \sin \theta)(\sin \theta)
+\]
+\[
+= r \cos^2 \theta + r \sin^2 \theta
+\]
+\[
+= r(\cos^2 \theta + \sin^2 \theta)
+\]
+\[
+= r
+\]
+
+\subsection*{Conclusion:}
+The Jacobian determinant for the polar coordinate transformation is:
+\[
+\boxed{r}
+\]
+
+\section*{Problem 3: Derive the Weak Form of the 1D Wave Equation}
+
+\subsection*{Given:}
+The 1D wave equation is:
+\[
+\frac{\partial^2 u(x, t)}{\partial t^2} - c^2 \nabla^2 u(x, t) = f(x, t)
+\]
+where \(c\) is a scalar-valued wave speed.
+
+\subsection*{Steps:}
+To derive the weak form:
+\begin{itemize}
+    \item Multiply by a test function \(V(x)\).
+    \item Integrate by parts (IBP) for spatial derivatives.
+\end{itemize}
+
+\subsubsection*{We Know:}
+The term \(\frac{\partial^2 u(x, t)}{\partial t^2}\) is a temporal derivative because \(\frac{\partial u(x, t)}{\partial t}\) is with respect to time.
+
+\subsection*{Start with the Weak Form:}
+\[
+\int V(x) \left( \frac{\partial^2 u(x, t)}{\partial t^2} - c^2 \nabla^2 u(x, t) \right) dx = \int f(x, t) V(x) dx
+\]
+
+Split into two terms:
+\[
+\int \frac{\partial^2 u(x, t)}{\partial t^2} V(x) dx - c^2 \int \nabla^2 u(x, t) V(x) dx = \int f(x, t) V(x) dx
+\]
+
+Using integration by parts (IBP):
+\[
+V(x) \cdot \nabla u(x, t) - \int \nabla u(x, t) \cdot \nabla V(x) dx
+\]
+
+where:
+\[
+u = V(x), \quad v = \frac{\partial u(x, t)}{\partial x}, \quad dv = \frac{\partial^2 u(x, t)}{\partial x^2} dx
+\]
+
+Substituting, we obtain:
+\[
+\int \frac{\partial^2 u(x, t)}{\partial t^2} V(x) dx - c^2 \int V(x) \cdot \nabla u(x, t) - \int \nabla u(x, t) \cdot \nabla V(x) dx = \int f(x, t) V(x) dx
+\]
+
+\subsection*{Final Weak Form:}
+\[
+\boxed{\int \frac{\partial^2 u(x, t)}{\partial t^2} V(x) dx - c^2 \left[ \int V(x) \cdot \nabla u(x, t) dx - \int \nabla u(x, t) \cdot \nabla V(x) dx \right] = \int f(x, t) V(x) dx}
+\]
+
+\section*{Problem 4: Lagrangian Interpolation Approximation}
+
+\subsection*{Given:}
+Let \(f(x) = e^x\) for \(0 \leq x \leq 2\). Approximate \(f(0.25)\) using Lagrangian linear interpolation with \(x_0 = 0\) and \(x_1 = 0.5\). Compare your answer to the real one.
+
+\subsection*{Steps:}
+We know that Lagrangian polynomials have:
+\[
+\frac{d^2}{dx^2} = 0 \quad \text{at desired points.}
+\]
+
+The given points are:
+\[
+f(0) = e^0 = 1, \quad f(0.5) = e^{0.5} \approx 1.6487
+\]
+
+The Lagrangian interpolation formula is:
+\[
+f(x) = y_0 \frac{(x - x_1)}{(x_0 - x_1)} + y_1 \frac{(x - x_0)}{(x_1 - x_0)}
+\]
+Substituting the values:
+\[
+f(x) = 1 \cdot \frac{(x - 0.5)}{(0 - 0.5)} + 1.6487 \cdot \frac{(x - 0)}{(0.5 - 0)}
+\]
+
+Simplify:
+\[
+f(x) = -2x + 1 + 1.6487(2x)
+\]
+\[
+f(x) = 1.2974x + 1
+\]
+
+\subsection*{Approximation for \(f(0.25)\):}
+Substitute \(x = 0.25\):
+\[
+f(0.25) = 1.2974(0.25) + 1 = 1.32435
+\]
+
+\subsection*{Exact Value:}
+The exact value is:
+\[
+f(0.25) = e^{0.25} \approx 1.284025
+\]
+
+\subsection*{Percentage Error:}
+\[
+\text{Error} = \frac{|1.32435 - 1.284025|}{1.284025} \approx 0.0314 = 3.14\%
+\]
+
+\subsection*{Conclusion:}
+The approximation \(f(0.25) = 1.32435\) is about \(3.14\%\) above the exact value \(1.284025\).
+
+\section*{Problem 5: Lagrangian Interpolating Polynomial}
+
+\subsection*{Given:}
+Let \(P_3(x)\) be the Lagrangian interpolating polynomial for the data \((0, 0)\), \((0.5, y)\), \((1, 3)\), and \((2, 2)\). Find \(y\) if the coefficient of the \(x^3\) term in \(P_3(x)\) is \(6\).
+
+\subsection*{Steps:}
+The Lagrangian polynomial is expressed as:
+\[
+f(x) = f_1(x) + f_2(x) + f_3(x) + f_4(x)
+\]
+
+Each term \(f_k(x)\) is:
+\[
+f_k(x) = y_k \prod_{\substack{i=0 \\ i \neq k}}^{n} \frac{x - x_i}{x_k - x_i}
+\]
+
+For the given points:
+\[
+f(x) = 0 \cdot \frac{(x - 0.5)(x - 1)(x - 2)}{(0 - 0.5)(0 - 1)(0 - 2)} 
++ y \cdot \frac{(x - 0)(x - 1)(x - 2)}{(0.5 - 0)(0.5 - 1)(0.5 - 2)}
++ 3 \cdot \frac{(x - 0)(x - 0.5)(x - 2)}{(1 - 0)(1 - 0.5)(1 - 2)}
++ 2 \cdot \frac{(x - 0)(x - 0.5)(x - 1)}{(2 - 0)(2 - 0.5)(2 - 1)}
+\]
+
+Simplify each term:
+\[
+f(x) = y \cdot \frac{(x - 0)(x - 1)(x - 2)}{(0.5)(-0.5)(-1.5)}
++ 3 \cdot \frac{(x - 0)(x - 0.5)(x - 2)}{(1)(0.5)(-1)}
++ 2 \cdot \frac{(x - 0)(x - 0.5)(x - 1)}{(2)(1.5)(1)}
+\]
+
+After simplifying:
+\[
+f(x) = \frac{1.5y x^3 - 15x^2 + 47.8125x - 32.8125}{2.8125}
+\]
+
+\subsection*{Finding \(y\):}
+The coefficient of \(x^3\) is given as \(6\). Thus:
+\[
+\frac{1.5y}{2.8125} = 6
+\]
+
+Solve for \(y\):
+\[
+1.5y = 6 \cdot 2.8125 = 16.875
+\]
+\[
+y = \frac{16.875}{1.5} \approx 21.25
+\]
+
+\subsection*{Conclusion:}
+The value of \(y\) is:
+\[
+\boxed{21.25}
+\]
+
+\end{document}
