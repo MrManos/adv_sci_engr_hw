@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.9.9)  17 NOV 2024 11:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.9.9)  20 NOV 2024 14:43
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -482,7 +482,8 @@ Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count325
 \l__pdf_internal_box=\box76
-) (hw_6_Document_Submission.aux)
+)
+No file hw_6_Document_Submission.aux.
 \openout1 = `hw_6_Document_Submission.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 27.
@@ -499,7 +500,7 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 27.
 LaTeX Font Info:    ... okay on input line 27.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 27.
 LaTeX Font Info:    ... okay on input line 27.
- (C:\Users\jacob\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
+(C:\Users\jacob\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count326
 \scratchdimen=\dimen292
@@ -538,15 +539,40 @@ File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
 {C:/Users/jacob/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
 
 [2]
+c:/Users/jacob/Documents/school/Adv_Sci_Engr/hw/hw_6/Report/hw_6_Document_Submission.tex:187: You can't use `macro parameter character #' in vertical mode.
+l.187 #
+       ## Evaluate the Boundary Condition:
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+c:/Users/jacob/Documents/school/Adv_Sci_Engr/hw/hw_6/Report/hw_6_Document_Submission.tex:187: You can't use `macro parameter character #' in vertical mode.
+l.187 ##
+        # Evaluate the Boundary Condition:
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+c:/Users/jacob/Documents/school/Adv_Sci_Engr/hw/hw_6/Report/hw_6_Document_Submission.tex:187: You can't use `macro parameter character #' in vertical mode.
+l.187 ###
+          Evaluate the Boundary Condition:
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+
 
 [3]
-Overfull \hbox (88.01137pt too wide) detected at line 262
+
+[4]
+Overfull \hbox (88.01137pt too wide) detected at line 274
 \OML/cmm/m/it/10.95 f\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x\OT1/cmr/m/n/10.95 ) = 0 \OMS/cmsy/m/n/10.95 ^^A [] \OT1/cmr/m/n/10.95 + \OML/cmm/m/it/10.95 y \OMS/cmsy/m/n/10.95 ^^A [] \OT1/cmr/m/n/10.95 + 3 \OMS/cmsy/m/n/10.95 ^^A [] \OT1/cmr/m/n/10.95 + 2 \OMS/cmsy/m/n/10.95 ^^A []
  []
 
 
-
-[4]
 
 [5] (hw_6_Document_Submission.aux)
  ***********
@@ -555,15 +581,15 @@ L3 programming layer <2024-08-16>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 26525 strings out of 473899
- 681023 string characters out of 5726501
+ 26522 strings out of 473899
+ 680866 string characters out of 5726501
  1937960 words of memory out of 5000000
- 48968 multiletter control sequences out of 15000+600000
+ 48967 multiletter control sequences out of 15000+600000
  570073 words of font info for 80 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,7n,93p,805b,609s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,8n,93p,805b,609s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\jacob\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk><C:/Users/jacob/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/jacob/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/jacob/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/jacob/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/jacob/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/jacob/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/jacob/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Users/jacob/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb><C:/Users/jacob/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/jacob/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/jacob/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/jacob/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/jacob/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/jacob/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/jacob/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on hw_6_Document_Submission.pdf (5 pages, 187734 bytes).
+Output written on hw_6_Document_Submission.pdf (5 pages, 188076 bytes).
 PDF statistics:
  101 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

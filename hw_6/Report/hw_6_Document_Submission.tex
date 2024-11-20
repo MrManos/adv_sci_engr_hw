@@ -134,13 +134,12 @@ The Jacobian determinant for the polar coordinate transformation is:
 \[
 \boxed{r}
 \]
-
 \section*{Problem 3: Derive the Weak Form of the 1D Wave Equation}
 
 \subsection*{Given:}
 The 1D wave equation is:
 \[
-\frac{\partial^2 u(x, t)}{\partial t^2} - c^2 \nabla^2 u(x, t) = f(x, t)
+\frac{\partial^2 u(x, t)}{\partial t^2} - c^2 \nabla^2 u(x, t) = f(x, t),
 \]
 where \(c\) is a scalar-valued wave speed.
 
@@ -152,36 +151,49 @@ To derive the weak form:
 \end{itemize}
 
 \subsubsection*{We Know:}
-The term \(\frac{\partial^2 u(x, t)}{\partial t^2}\) is a temporal derivative because \(\frac{\partial u(x, t)}{\partial t}\) is with respect to time.
+The term \(\frac{\partial^2 u(x, t)}{\partial t^2}\) is a temporal derivative, as \(\frac{\partial u(x, t)}{\partial t}\) is with respect to time.
 
 \subsection*{Start with the Weak Form:}
 \[
-\int V(x) \left( \frac{\partial^2 u(x, t)}{\partial t^2} - c^2 \nabla^2 u(x, t) \right) dx = \int f(x, t) V(x) dx
+\int V(x) \left( \frac{\partial^2 u(x, t)}{\partial t^2} - c^2 \nabla^2 u(x, t) \right) dx = \int f(x, t) V(x) \, dx.
 \]
 
 Split into two terms:
 \[
-\int \frac{\partial^2 u(x, t)}{\partial t^2} V(x) dx - c^2 \int \nabla^2 u(x, t) V(x) dx = \int f(x, t) V(x) dx
+\int \frac{\partial^2 u(x, t)}{\partial t^2} V(x) \, dx - c^2 \int \nabla^2 u(x, t) V(x) \, dx = \int f(x, t) V(x) \, dx.
 \]
 
 Using integration by parts (IBP):
 \[
-V(x) \cdot \nabla u(x, t) - \int \nabla u(x, t) \cdot \nabla V(x) dx
+V(x) \cdot \nabla u(x, t) - \int \nabla u(x, t) \cdot \nabla V(x) \, dx,
 \]
 
 where:
 \[
-u = V(x), \quad  du = \frac{dV(x)}{dx} \quad v = \frac{\partial u(x, t)}{\partial x}, \quad dv = \frac{\partial^2 u(x, t)}{\partial x^2} dx, \quad \frac{d}{dx} = \nabla
+u = V(x), \quad du = \frac{dV(x)}{dx}, \quad v = \frac{\partial u(x, t)}{\partial x}, \quad dv = \frac{\partial^2 u(x, t)}{\partial x^2} \, dx, \quad \nabla = \frac{d}{dx}.
 \]
 
 Substituting, we obtain:
 \[
-\int \frac{\partial^2 u(x, t)}{\partial t^2} V(x) dx - c^2 \int V(x) \cdot \nabla u(x, t) - \int \nabla u(x, t) \cdot \nabla V(x) dx = \int f(x, t) V(x) dx
+\int \frac{\partial^2 u(x, t)}{\partial t^2} V(x) \, dx - c^2 \left[ V(x) \cdot \nabla u(x, t) - \int \nabla u(x, t) \cdot \nabla V(x) \, dx \right] = \int f(x, t) V(x) \, dx.
+\]
+
+\[
+\boxed{
+\int \frac{\partial^2 u(x, t)}{\partial t^2} V(x) \, dx - c^2 \left[ V(x) \cdot \nabla u(x, t) \big|_{0}^{1} - \int \nabla u(x, t) \cdot \nabla V(x) \, dx \right] = \int f(x, t) V(x) \, dx
+}.
+\]
+
+### Evaluate the Boundary Condition:
+\[
+V(x) \cdot \nabla u(x, t) \big|_{0}^{1} = 0, \quad \text{because the test function evaluates to 0 at the boundary.}
 \]
 
 \subsection*{Final Weak Form:}
 \[
-\boxed{\int \frac{\partial^2 u(x, t)}{\partial t^2} V(x) dx - c^2 \left[ \int V(x) \cdot \nabla u(x, t) dx - \int \nabla u(x, t) \cdot \nabla V(x) dx \right] = \int f(x, t) V(x) dx}
+\boxed{
+\int \frac{\partial^2 u(x, t)}{\partial t^2} V(x) \, dx + c^2 \int \nabla u(x, t) \cdot \nabla V(x) \, dx = \int f(x, t) V(x) \, dx
+}.
 \]
 
 \section*{Problem 4: Lagrangian Interpolation Approximation}
