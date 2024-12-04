@@ -70,6 +70,6 @@ ax.set_ylabel("y")
 ax.set_zlabel("Interpolated f(x, y)")
 plt.show()
 
-# Print the numerical integration results
+# Output the numerical integration results as numeric values
 print(f"Numerical integration of original function: {integral_f}")
 print(f"Numerical integration of interpolated function: {integral_f_interp}")

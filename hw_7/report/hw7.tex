@@ -1,0 +1,402 @@
+\documentclass[11pt]{article}
+\usepackage{subfigure,wrapfig,graphicx,booktabs,fancyhdr,amsmath,amsfonts,appendix,tikz}
+\usepackage{bm,amssymb,amsthm,wasysym,color,fullpage,setspace,multirow,placeins}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{amsmath,amssymb}
+\usepackage{tcolorbox}
+
+% Custom math commands
+\newcommand{\vb}{\boldsymbol}
+\newcommand{\vbh}[1]{\hat{\boldsymbol{#1}}}
+\newcommand{\vbb}[1]{\bar{\boldsymbol{#1}}}
+\newcommand{\vbt}[1]{\tilde{\boldsymbol{#1}}}
+\newcommand{\vbs}[1]{{\boldsymbol{#1}}^*}
+\newcommand{\vbd}[1]{\dot{{\boldsymbol{#1}}}}
+\newcommand{\vbdd}[1]{\ddot{{\boldsymbol{#1}}}}
+\newcommand{\by}{\times}
+\newcommand{\tr}{{\rm tr}}
+\newcommand{\cpe}[1]{\left[{#1} \times\right]}
+\newcommand{\sfrac}[2]{\textstyle\frac{#1}{#2}}
+
+% Title and Author Information
+\title{Homework 7}
+\author{Jacob Hands \\ COE 352}
+\date{December 4, 2023}
+
+\begin{document}
+\maketitle
+
+\textbf{1. (20pts) Approximate $\int_0^\pi \sin x \, dx$ using the 4-point quadrature rule on a parent domain of $-1 \leq \xi \leq 1$.}
+
+From the notes, it says to look up point weights and locations, so that's what I did.
+
+\[
+N_q = 4, \quad q_i: \{-0.861, -0.348, 0.348, 0.861\}, \quad w_i: \{0.348, 0.652, 0.652, 0.348\}.
+\]
+
+\[
+\int_a^b f(x) \, dx = \int_{-1}^1 f(x(\xi)) \frac{dx}{d\xi} \, d\xi = \sum_{i=1}^{N_q} w_i f(x(q_i)).
+\]
+
+We have to do element mapping because the grid is unstructured.
+
+\[
+\frac{d\xi}{dx} = \frac{2}{h}, \quad dx = \frac{h}{2} \, d\xi, \quad h = b-a \implies dx = \frac{\pi - 0}{2} \, d\xi = \frac{\pi}{2} \, d\xi.
+\]
+
+Now,
+\[
+x(\xi) = \frac{\pi}{2} \frac{\xi + 1}{2} + 0 \implies x(\xi) = \frac{\pi}{2} \frac{\xi + 1}{2}.
+\]
+
+\[
+\int_a^b f(x) \, dx = \int_{-1}^1 f(x(\xi)) \frac{dx}{d\xi} \, d\xi = \sum_{i=1}^{N_q} w_i f(x(\xi_i)) \frac{dx}{d\xi}.
+\]
+
+\[
+\frac{dx}{d\xi} = \frac{\pi}{2}.
+\]
+
+Evaluations:
+\[
+x_1 = f\left(\frac{\pi}{2}(-0.861 + 1)\right) = 0.34025,
+\]
+\[
+x_2 = f\left(\frac{\pi}{2}(-0.348 + 1)\right) = 1.34190,
+\]
+\[
+x_3 = f\left(\frac{\pi}{2}(0.348 + 1)\right) = 1.34190,
+\]
+\[
+x_4 = f\left(\frac{\pi}{2}(0.861 + 1)\right) = 0.34025.
+\]
+
+\[
+\sum_{i=1}^{N_q} w_i f(x_i) = (0.652)(1.34190) + (0.652)(1.34190) + (0.348)(0.34025) + (0.348)(0.34025).
+\]
+
+Final result:
+\[
+\approx 1.984.
+\]
+
+\textbf{2. (20pts)} Find the constants \(c_0\), \(c_1\), and \(x_1\) so that the quadrature formula 
+\[
+\int_0^1 f(x) \, dx = c_0 f(0) + c_1 f(x_1)
+\]
+has the highest possible degree of precision.
+
+\begin{itemize}
+    \item \textbf{Highest degree of precision:} For \(2N_q - 1 = 2(2) - 1 = 3\), we need the formula to be exact up to \(x^2\).
+    \item \textbf{Independent parameters:} \(c_1\) and \(x_1\).
+\end{itemize}
+
+The conditions are:
+\[
+\int_0^1 1 \, dx = c_0 f(0) + c_1 f(x_1) = 1,
+\]
+\[
+\int_0^1 x \, dx = c_0(0) + c_1 x_1 = \frac{1}{2},
+\]
+\[
+\int_0^1 x^2 \, dx = c_0(0) + c_1 x_1^2 = \frac{1}{3}.
+\]
+
+\textbf{Step 1: Solve for \(c_0\) and \(c_1\)}
+\[
+c_0 + c_1 = 1 \quad \Rightarrow \quad c_0 = 1 - c_1.
+\]
+
+\textbf{Step 2: Solve for \(c_1\) and \(x_1\) from the second condition}
+\[
+c_1 x_1 = \frac{1}{2}.
+\]
+
+\[
+c_1 = \frac{1}{x_1}.
+\]
+
+\textbf{Step 3: Use the third condition to solve for \(x_1\)}
+\[
+c_1 x_1^2 = \frac{1}{3}.
+\]
+
+Substituting \(c_1 = \frac{1}{x_1}\),
+\[
+\frac{x_1}{x_1} \cdot x_1^2 = \frac{1}{3},
+\]
+\[
+x_1 = \frac{2}{3}.
+\]
+
+\textbf{Step 4: Solve for \(c_1\) and \(c_0\)}
+\[
+c_1 = \frac{1}{x_1} = \frac{1}{\frac{2}{3}} = \frac{3}{2}.
+\]
+\[
+c_0 = 1 - c_1 = 1 - \frac{3}{2} = \frac{1}{4}.
+\]
+
+\textbf{Final Results:}
+\[
+c_0 = \frac{1}{4}, \quad c_1 = \frac{3}{2}, \quad x_1 = \frac{2}{3}.
+\]
+
+\textbf{3. (20pts)} Using 2D Gaussian quadrature, compute the integral of the 2D function 
+\[
+f(x, y) = x^2y^2
+\]
+defined on the reference quadrilateral on the domain \([-1, 1] \times [-1, 1]\).
+
+\textbf{Solution:}
+
+If 1D Gaussian quadrature is:
+\[
+\int f(x) \, dx \approx \sum_{i=1}^N w_i f(x_i),
+\]
+then 2D Gaussian quadrature is:
+\[
+\int \int f(x, y) \, dx \, dy \approx \sum_{i=1}^N \sum_{j=1}^N w_i w_j f(x_i, y_j).
+\]
+
+Here, \(N = 2\) because the highest degree polynomial is \(x^2\).
+
+\[
+N = 2, \quad q_i = \{-0.58, 0.58\}, \quad w_i = \{1, 1\}.
+\]
+
+The formula is:
+\[
+w_1 w_1 f(x_1, y_1) + w_1 w_2 f(x_1, y_2) + w_2 w_1 f(x_2, y_1) + w_2 w_2 f(x_2, y_2).
+\]
+
+Substituting the values:
+\[
+1 \cdot 1 \cdot (-0.58)^2 (-0.58)^2 + 1 \cdot 1 \cdot (-0.58)^2 (0.58)^2 + 1 \cdot 1 \cdot (0.58)^2 (-0.58)^2 + 1 \cdot 1 \cdot (0.58)^2 (0.58)^2.
+\]
+
+Evaluating:
+\[
+(1)(0.58^2)(0.58^2) + (1)(0.58^2)(0.58^2) + (1)(0.58^2)(0.58^2) + (1)(0.58^2)(0.58^2).
+\]
+
+\[
+\text{Answer is approximately: } 0.444.
+\]
+
+
+
+\textbf{4. (20pts)} Define the 2D linear Lagrange polynomials on a unit quadrilateral \([-1, 1] \times [-1, 1]\) by \textit{taking the product of the two 1D polynomials}. Use the polynomials to numerically integrate the function 
+\[
+f(x, y) = \frac{1}{4}(1 - x - y + x^2 y^2).
+\]
+Plot the original function versus your interpolate for comparison.
+
+\textbf{Solution:}
+
+\begin{itemize}
+    \item \(N = 2\) because the highest polynomial is \(x^2\).
+    \item The 2D basis polynomials are obtained as the product of the 1D polynomials.
+\end{itemize}
+
+\[
+L_1(x) = \frac{1 - x}{2}, \quad L_2(x) = \frac{1 + x}{2}, \quad L_1(y) = \frac{1 - y}{2}, \quad L_2(y) = \frac{1 + y}{2}.
+\]
+
+The 2D polynomials are:
+\[
+\begin{aligned}
+\phi_1(x, y) &= L_1(x) L_1(y), \\
+\phi_2(x, y) &= L_1(x) L_2(y), \\
+\phi_3(x, y) &= L_2(x) L_1(y), \\
+\phi_4(x, y) &= L_2(x) L_2(y).
+\end{aligned}
+\]
+
+\[
+\phi_1(x, y) = \frac{(1 - x)(1 - y)}{4}, \quad \phi_2(x, y) = \frac{(1 - x)(1 + y)}{4},
+\]
+\[
+\phi_3(x, y) = \frac{(1 + x)(1 - y)}{4}, \quad \phi_4(x, y) = \frac{(1 + x)(1 + y)}{4}.
+\]
+
+\textbf{Numerical Integration:}
+
+The 2D integral is:
+\[
+\int_{-1}^1 \int_{-1}^1 f(x, y) \, dx \, dy \approx \sum_{i=1}^N \sum_{j=1}^N w_i w_j f(x_i, y_j).
+\]
+
+\textbf{Function Evaluation:}
+
+\[
+f(-1, -1) = \frac{1}{4}(1 - (-1) - (-1) + (-1)^2(-1)^2) = \frac{1}{4} \cdot 4 = 1,
+\]
+
+\[
+f(-1, 1) = \frac{1}{4}(1 - (-1) - 1 + (-1)^2(1)^2) = \frac{1}{4} \cdot 2 = \frac{1}{2},
+\]
+
+\[
+f(1, -1) = \frac{1}{4}(1 - 1 - (-1) + (1)^2(-1)^2) = \frac{1}{4} \cdot 2 = \frac{1}{2},
+\]
+
+\[
+f(1, 1) = \frac{1}{4}(1 - 1 - 1 + (1)^2(1)^2) = \frac{1}{4} \cdot 0 = 0.
+\]
+
+\textbf{Interpolating Polynomial:}
+
+\[
+f(x, y) \approx \phi_1(x, y) f(-1, -1) + \phi_2(x, y) f(-1, 1) + \phi_3(x, y) f(1, -1) + \phi_4(x, y) f(1, 1).
+\]
+
+Substitute the values of \(\phi_i(x, y)\) and \(f(x_i, y_i)\):
+\[
+f(x, y) = \frac{(1 - x)(1 - y)}{4}(1) + \frac{(1 - x)(1 + y)}{4}\left(\frac{1}{2}\right) + \frac{(1 + x)(1 - y)}{4}\left(\frac{1}{2}\right) + \frac{(1 + x)(1 + y)}{4}(0).
+\]
+
+Simplify:
+\[
+f(x, y) = \frac{1 - x}{4}.
+\]
+
+\textbf{Now integrate:}
+\[
+\int_{-1}^1 \int_{-1}^1 f(x, y) \, dx \, dy = \int_0^1 \int_0^1 \left(1 - \frac{x}{4}\right) \, dx \, dy.
+\]
+
+Perform the integration step by step:
+\[
+\int_0^1 \int_0^1 \left(1 - \frac{x}{4}\right) \, dx \, dy = \int_0^1 \left[\int_0^1 \left(1 - \frac{x}{4}\right) dx \right] dy.
+\]
+
+First, integrate with respect to \(x\):
+\[
+\int_0^1 \left(1 - \frac{x}{4}\right) dx = \left[x - \frac{x^2}{8}\right]_0^1 = \left(1 - \frac{1}{8}\right) = \frac{7}{8}.
+\]
+
+Now, integrate with respect to \(y\):
+\[
+\int_0^1 \frac{7}{8} \, dy = \frac{7}{8} \cdot 1 = \frac{7}{8}.
+\]
+
+Correct the domain back to \([-1, 1]\):
+\[
+\int_{-1}^1 \int_{-1}^1 f(x, y) \, dx \, dy = \int_{-1}^1 \frac{7}{8} \, dy = 1.
+\]
+
+\textbf{Final Answer:} 
+\[
+\boxed{1}.
+\]
+
+
+\textbf{5. (20pts)} Find the Jacobian matrix,
+\[
+\begin{pmatrix}
+\frac{\partial x}{\partial \xi} & \frac{\partial y}{\partial \xi} \\
+\frac{\partial x}{\partial \eta} & \frac{\partial y}{\partial \eta}
+\end{pmatrix},
+\]
+using 2D Lagrange interpolation mapping from a quadrilateral with the nodal coordinates \((0,0)\), \((1,0)\), \((2,2)\), and \((0,1)\).
+
+\textbf{Solution:}
+
+We start by defining the 2D Lagrange polynomials as derived earlier:
+\[
+\begin{aligned}
+N_1(\xi, \eta) &= \frac{1}{4}(1-\xi)(1-\eta), \\
+N_2(\xi, \eta) &= \frac{1}{4}(1+\xi)(1-\eta), \\
+N_3(\xi, \eta) &= \frac{1}{4}(1+\xi)(1+\eta), \\
+N_4(\xi, \eta) &= \frac{1}{4}(1-\xi)(1+\eta).
+\end{aligned}
+\]
+
+The coordinates \(x(\xi, \eta)\) and \(y(\xi, \eta)\) are expressed as:
+\[
+x(\xi, \eta) = \sum_{i=1}^4 N_i(\xi, \eta) x_i,
+\]
+\[
+y(\xi, \eta) = \sum_{i=1}^4 N_i(\xi, \eta) y_i,
+\]
+where the nodal coordinates are:
+\[
+(x_1, y_1) = (0, 0), \quad (x_2, y_2) = (1, 0), \quad (x_3, y_3) = (2, 2), \quad (x_4, y_4) = (0, 1).
+\]
+
+\textbf{Step 1: Compute derivatives of \(N_i\) with respect to \(\xi\) and \(\eta\):}
+
+\[
+\begin{aligned}
+\frac{\partial N_1}{\partial \xi} &= -\frac{1}{4}(1-\eta), & \frac{\partial N_1}{\partial \eta} &= -\frac{1}{4}(1-\xi), \\
+\frac{\partial N_2}{\partial \xi} &= \frac{1}{4}(1-\eta), & \frac{\partial N_2}{\partial \eta} &= -\frac{1}{4}(1+\xi), \\
+\frac{\partial N_3}{\partial \xi} &= \frac{1}{4}(1+\eta), & \frac{\partial N_3}{\partial \eta} &= \frac{1}{4}(1+\xi), \\
+\frac{\partial N_4}{\partial \xi} &= -\frac{1}{4}(1+\eta), & \frac{\partial N_4}{\partial \eta} &= \frac{1}{4}(1-\xi).
+\end{aligned}
+\]
+
+\textbf{Step 2: Compute \(\frac{\partial x}{\partial \xi}, \frac{\partial x}{\partial \eta}, \frac{\partial y}{\partial \xi}, \frac{\partial y}{\partial \eta}\):}
+
+\[
+\frac{\partial x}{\partial \xi} = \sum_{i=1}^4 \frac{\partial N_i}{\partial \xi} x_i,
+\]
+\[
+\frac{\partial y}{\partial \xi} = \sum_{i=1}^4 \frac{\partial N_i}{\partial \xi} y_i,
+\]
+\[
+\frac{\partial x}{\partial \eta} = \sum_{i=1}^4 \frac{\partial N_i}{\partial \eta} x_i,
+\]
+\[
+\frac{\partial y}{\partial \eta} = \sum_{i=1}^4 \frac{\partial N_i}{\partial \eta} y_i.
+\]
+
+Substituting the nodal values into the expressions:
+\[
+\frac{\partial x}{\partial \xi} = -\frac{1}{4}(1-\eta)(0) + \frac{1}{4}(1-\eta)(1) + \frac{1}{4}(1+\eta)(2) + -\frac{1}{4}(1+\eta)(0),
+\]
+\[
+\frac{\partial x}{\partial \xi} = \frac{1}{4}(1-\eta) + \frac{1}{2}(1+\eta),
+\]
+\[
+\frac{\partial x}{\partial \xi} = \frac{1}{4}(2\eta + 3).
+\]
+
+Similarly:
+\[
+\frac{\partial y}{\partial \xi} = -\frac{1}{4}(1-\eta)(0) + \frac{1}{4}(1-\eta)(0) + \frac{1}{4}(1+\eta)(2) + -\frac{1}{4}(1+\eta)(1),
+\]
+\[
+\frac{\partial y}{\partial \xi} = \frac{1}{4}(1+\eta).
+\]
+
+\[
+\frac{\partial x}{\partial \eta} = -\frac{1}{4}(1-\xi)(0) + -\frac{1}{4}(1+\xi)(1) + \frac{1}{4}(1+\xi)(2) + \frac{1}{4}(1-\xi)(0),
+\]
+\[
+\frac{\partial x}{\partial \eta} = \frac{1}{4}(1+\xi).
+\]
+
+\[
+\frac{\partial y}{\partial \eta} = -\frac{1}{4}(1-\xi)(0) + -\frac{1}{4}(1+\xi)(0) + \frac{1}{4}(1+\xi)(2) + \frac{1}{4}(1-\xi)(1),
+\]
+\[
+\frac{\partial y}{\partial \eta} = \frac{1}{4}(1+\xi).
+\]
+
+\textbf{Step 3: Write the Jacobian matrix:}
+
+\[
+\mathbf{J} =
+\begin{pmatrix}
+\frac{\partial x}{\partial \xi} & \frac{\partial y}{\partial \xi} \\
+\frac{\partial x}{\partial \eta} & \frac{\partial y}{\partial \eta}
+\end{pmatrix} =
+\begin{pmatrix}
+\frac{1}{4}(2\eta + 3) & \frac{1}{4}(1+\eta) \\
+\frac{1}{4}(1+\xi) & \frac{1}{4}(1+\xi)
+\end{pmatrix}.
+\]
+
+\end{document}
