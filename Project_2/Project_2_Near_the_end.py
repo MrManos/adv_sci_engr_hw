@@ -196,6 +196,7 @@ def main():
     plt.legend()
     plt.grid()
     plt.show()
-
-if __name__ == "__main__":
+    print("Forward euler hits instability at a time step of approximately 1/540. As the amount of nodal values decreases, the approximation becomes weaker and starts to under approximate along the whole interval. This is showcased by oscillations and divergence of the approximations. ")
+    
+    print("As the backward euler time-step becomes equal or greater than the spatial step size, the method maintains stability but will eventually lose accurace as dt becomes large enough. The lose of accuracy is caused by the numerical diffusion which over-smooths the gradients leading to an overestimation, leading to a lack of the finer details.")
     main()
