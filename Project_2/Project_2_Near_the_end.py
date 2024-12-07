@@ -3,9 +3,8 @@ import matplotlib.pyplot as plt
 
 # Define the right-hand side function f(x, t) and exact solution
 f = lambda x, t: (np.pi**2 - 1) * np.exp(-t) * np.sin(np.pi * x)
-u_exact = lambda x, t: np.exp(-t) * np.sin(np.pi * x)
-
-# Function to create uniform grid and connectivity
+u_exact = lambda x, t: np.exp(-t) * np.sin(np.pi * x)   
+    
 def create_uniform_grid_and_connectivity(N, x_left, x_right):
     Ne = N - 1
     h = (x_right - x_left) / Ne
@@ -13,7 +12,6 @@ def create_uniform_grid_and_connectivity(N, x_left, x_right):
     iee = np.array([[i, i + 1] for i in range(Ne)])
     return x, iee, h
 
-# Define basis functions
 def define_basis_functions():
     phi_1 = lambda xi: 0.5 * (1 - xi)
     phi_2 = lambda xi: 0.5 * (1 + xi)
@@ -21,9 +19,9 @@ def define_basis_functions():
     dphi_2_dxi = lambda xi: 0.5
     return phi_1, phi_2, dphi_1_dxi, dphi_2_dxi
 
-# Compute the global mass matrix
 def compute_mass_matrix(N, iee, phi_1, phi_2, h):
     M_global = np.zeros((N, N))
+    # 2d quad
     gauss_points = [-np.sqrt(1/3), np.sqrt(1/3)]
     gauss_weights = [1, 1]
     for elem in iee:
@@ -38,12 +36,15 @@ def compute_mass_matrix(N, iee, phi_1, phi_2, h):
                 M_global[elem[l], elem[m]] += m_local[l, m]
     return M_global
 
-# Compute local element matrices
+
 def compute_local_element_matrices(h, phi_1, phi_2, dphi_1_dxi, dphi_2_dxi, f, x_element, t):
+    # 2D quad
     gauss_points = [-np.sqrt(1/3), np.sqrt(1/3)]
     gauss_weights = [1, 1]
+    # Create locals
     k_local = np.zeros((2, 2))
     f_local = np.zeros(2)
+    # make the locals
     for gp, gw in zip(gauss_points, gauss_weights):
         phi = [phi_1(gp), phi_2(gp)]
         dphi_dx = [dphi_1_dxi(gp) * 2 / h, dphi_2_dxi(gp) * 2 / h]
@@ -56,7 +57,7 @@ def compute_local_element_matrices(h, phi_1, phi_2, dphi_1_dxi, dphi_2_dxi, f, x
                 k_local[l, m] += gw * dphi_dx[l] * dphi_dx[m] * h / 2
     return k_local, f_local
 
-# Assemble global matrices
+
 def assemble_global_matrices(N, iee, k_local_all, f_local_all):
     K_global = np.zeros((N, N))
     F_global = np.zeros(N)
@@ -66,7 +67,8 @@ def assemble_global_matrices(N, iee, k_local_all, f_local_all):
             for m in range(2):
                 K_global[elem[l], elem[m]] += k_local_all[k][l, m]
     return K_global, F_global
-# Assemble RHS vector
+
+
 def assemble_rhs(f, iee, x, h, t, gp, gw):
     F_global = np.zeros(len(x))
     for elem in iee:
@@ -79,17 +81,17 @@ def assemble_rhs(f, iee, x, h, t, gp, gw):
         for l in range(2):
             F_global[elem[l]] += flocal[l]
     return F_global
-# Apply Dirichlet boundary conditions with explicit enforcement of boundary values
+
 def apply_dirichlet_bc(matrix, vector, boundary_nodes, N):
     """
     Modify the global matrix and RHS vector to enforce Dirichlet boundary conditions.
     """
     for node in boundary_nodes:
         for j in range(N):
-            matrix[node, j] = 0  # Zero out the row
-            matrix[j, node] = 0  # Zero out the column
-        matrix[node, node] = 1  # Set diagonal to 1
-        vector[node] = 0       # Set RHS value to 0 for boundary nodes
+            matrix[node, j] = 0  
+            matrix[j, node] = 0  
+        matrix[node, node] = 1  
+        vector[node] = 0       
     return matrix, vector
 
 # Solve using Forward Euler with explicit boundary enforcement
@@ -107,11 +109,11 @@ def solve_forward_euler(K_global, M_global, u_initial, dt, T0, Tf, iee, x, h, f,
         # Assemble the RHS vector
         F_global = assemble_rhs(f, iee, x, h, t, gp, gw)
 
-        # Forward Euler update
+        # compute rhs and the forward euler update
         rhs = -K_global @ u + F_global
         u = u + dt * (M_inv @ rhs)
 
-        # Enforce boundary conditions
+        # Enforce boundary conditions at the nodes
         for node in boundary_nodes:
             u[node] = 0
 
@@ -133,7 +135,7 @@ def solve_backward_euler(K_global, M_global, u_initial, dt, T0, Tf, iee, x, h, f
         # Assemble the RHS vector
         F_global = assemble_rhs(f, iee, x, h, t, gp, gw)
 
-        # Explicit computation of u^{n+1} using the given formula
+        # Compute the rhs and back euler formula
         rhs = (1 / dt) * M_global @ u + F_global
         u_next = (1 / dt) * (B_inv @ M_global @ u) + B_inv @ F_global
 
@@ -144,17 +146,22 @@ def solve_backward_euler(K_global, M_global, u_initial, dt, T0, Tf, iee, x, h, f
         u = u_next
 
     return u
-# Updated main function to overlay exact solution with each Euler method
+
 def main():
+
+    
+    #Parameters
     N = 11
     x_left, x_right = 0, 1
     T0, Tf = 0, 1
     dt = 1 / 551
+    boundary_nodes = [0, N - 1]
 
     # 2d quad points
     gp = [-1 / np.sqrt(3), 1 / np.sqrt(3)]
     gw = [1, 1]
 
+    # Call the functions
     x, iee, h = create_uniform_grid_and_connectivity(N, x_left, x_right)
     phi_1, phi_2, dphi_1_dxi, dphi_2_dxi = define_basis_functions()
 
@@ -165,7 +172,7 @@ def main():
     ])
     K_global, F_global = assemble_global_matrices(N, iee, k_local_all, f_local_all)
 
-    boundary_nodes = [0, N - 1]
+    
     K_global, F_global = apply_dirichlet_bc(K_global, F_global, boundary_nodes, N)
     M_global, _ = apply_dirichlet_bc(M_global, F_global, boundary_nodes, N)
 
@@ -175,7 +182,7 @@ def main():
     u_backward = solve_backward_euler(K_global, M_global, u_initial, dt, T0, Tf, iee, x, h, f, gp, gw, boundary_nodes)
     u_exact_vals = u_exact(x, Tf)
 
-    # Plot Forward Euler solution with exact solution
+   
     plt.figure()
     plt.plot(x, u_forward, label="Forward Euler")
     plt.plot(x, u_exact_vals,color = 'r', label="Exact Solution")
@@ -186,7 +193,7 @@ def main():
     plt.grid()
     plt.show()
 
-    # Plot Backward Euler solution with exact solution
+   
     plt.figure()
     plt.plot(x, u_backward, label="Backward Euler")
     plt.plot(x, u_exact_vals, color = 'r', label="Exact Solution")
